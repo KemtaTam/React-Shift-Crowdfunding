@@ -6,22 +6,29 @@ import { NavLink } from 'react-router-dom';
 import { useState } from 'react';
 import passEye from '../../images/passEye.svg'
 
+/* matches(/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{2,})/,
+"Должен содержать от 5 до 255 символов, одну большую букву, одну маленькую, одну цифру и один специальный символ"
+) */
+
 const RegistrationForm = (props) => {
 	const [passFlag, setPassFlag] = useState(true);
 
 	return (
 		<Formik
-			initialValues={{ email: '', password: '', repeatPassword: '' }}
+			initialValues={{ email: '', password: '', repeatPassword: '', name: '', secondName: '', middleName: ''}}
 			validationSchema={Yup.object({
-				email: Yup.string().email('Некорректный email').required('Обязательно'),
-				password: Yup.string().min(4, 'Должен содержать 4 символа или больше').required('Обязательно'),
+				email: Yup.string().email('Некорректный email').required('Обязательно').max(255, 'Email должен содержать не более 255 символов'),
+				password: Yup.string().min(5, 'Должен содержать от 5 до 255 символов').max(255, "Должен содержать от 5 до 255 символов").required('Обязательно'),
 				repeatPassword: Yup.string().when("password", {
 					is: val => (val && val.length > 0 ? true : false),
 					then: Yup.string().oneOf(
 					  [Yup.ref("password")],
 					  "Пароли должны совпадать"
 					)
-				  })
+				  }).required('Обязательно'),
+				name: Yup.string().max(32, 'Имя должно содержать не более 32 символов').required('Обязательно'),
+				secondName: Yup.string().max(32, 'Фамилия должна содержать не более 32 символов').required('Обязательно'),
+				middleName: Yup.string().max(32, 'Отчество должно содержать не более 32 символов'),
 			  })}
 			onSubmit={(values, { setSubmitting, setStatus }) => {
 				console.log(JSON.stringify(values, null, 2));
@@ -39,19 +46,31 @@ const RegistrationForm = (props) => {
 						<div className={s.line_navigate}></div>
 						<div className={s.errorText}>{status}</div> 
 						<div >
-							<Field className={s.elemForm} type="email" name="email" placeholder="Email"/>
+							<Field className={s.elemForm} name="name" placeholder="Имя*"/>
+							<ErrorMessage className={s.errorMes} name="name" component="div" />
+						</div>
+						<div >
+							<Field className={s.elemForm} name="secondName" placeholder="Фамилия*"/>
+							<ErrorMessage className={s.errorMes} name="secondName" component="div" />
+						</div >
+						<div >
+							<Field className={s.elemForm} name="middleName" placeholder="Отчество"/>
+							<ErrorMessage className={s.errorMes} name="middleName" component="div" />
+						</div>
+						<div >
+							<Field className={s.elemForm} type="email" name="email" placeholder="Email*"/>
 							<ErrorMessage className={s.errorMes} name="email" component="div" />
 						</div>
 						<div>
-						<Field className={s.elemForm} type={passFlag ? "password" : "text"} name="password" placeholder="Password"/>
+						<Field className={s.elemForm} type={passFlag ? "password" : "text"} name="password" placeholder="Password*"/>
 							<img src={passEye} alt="eye" onClick={() => setPassFlag(!passFlag)}/>
 							<ErrorMessage className={s.errorMes} name="password" component="div" />
 						</div>
 						<div>
-							<Field className={s.elemForm} type="password" name="repeatPassword" placeholder="Repeat rassword"/>
+							<Field className={s.elemForm} type="password" name="repeatPassword" placeholder="Repeat rassword*"/>
 							<ErrorMessage className={s.errorMes} name="repeatPassword" component="div" />
 						</div>
-						<button className={s.bLogin} type="submit" disabled={isSubmitting}>Войти</button>
+						<button className={s.bLogin} type="submit" disabled={isSubmitting}>Зарегистрироваться</button>
 					</div>
 				</Form>
 			)}

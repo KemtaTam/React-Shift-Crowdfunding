@@ -3,54 +3,57 @@
 	"version": "0.1.0",
 	"private": true,
 	"dependencies": {
-	  "@testing-library/react": "^12.1.2",
-	  "@testing-library/user-event": "^13.5.0",
-	  "axios": "^0.27.2",
-	  "classnames": "^2.3.1",
-	  "formik": "^2.2.9",
-	  "react": "^17.0.2",
-	  "react-dom": "^17.0.2",
-	  "react-error-overlay": "^6.0.11",
-	  "react-redux": "^8.0.0",
-	  "react-router-dom": "^6.2.2",
-	  "react-scripts": "^5.0.1",
-	  "redux": "^4.1.2",
-	  "redux-thunk": "^2.4.1",
-	  "reselect": "^4.1.6",
-	  "web-vitals": "^2.1.4",
-	  "yup": "^0.32.11"
+		"@testing-library/react": "^12.1.2",
+		"@testing-library/user-event": "^13.5.0",
+		"antd": "^4.21.5",
+		"axios": "^0.27.2",
+		"classnames": "^2.3.1",
+		"formik": "^2.2.9",
+		"formik-antd": "^2.0.4",
+		"react": "^17.0.2",
+		"react-dom": "^17.0.2",
+		"react-error-overlay": "^6.0.11",
+		"react-redux": "^8.0.0",
+		"react-router-dom": "^6.2.2",
+		"react-scripts": "^5.0.1",
+		"redux": "^4.1.2",
+		"redux-thunk": "^2.4.1",
+		"reselect": "^4.1.6",
+		"web-vitals": "^2.1.4",
+		"yup": "^0.32.11"
 	},
 	"scripts": {
-	  "start": "react-scripts start",
-	  "build": "react-scripts build",
-	  "test": "react-scripts test",
-	  "eject": "react-scripts eject",
-	  "predeploy": "npm run build",
-	  "deploy": "gh-pages -d build"
+		"start": "react-scripts start",
+		"build": "react-scripts build",
+		"test": "react-scripts test",
+		"eject": "react-scripts eject",
+		"predeploy": "npm run build",
+		"deploy": "gh-pages -d build",
+		"server": "json-server -w server/db.json -p 3001"
 	},
 	"eslintConfig": {
-	  "extends": [
-		"react-app",
-		"react-app/jest"
-	  ]
+		"extends": [
+			"react-app",
+			"react-app/jest"
+		]
 	},
 	"browserslist": {
-	  "production": [
-		">0.2%",
-		"not dead",
-		"not op_mini all"
-	  ],
-	  "development": [
-		"last 1 chrome version",
-		"last 1 firefox version",
-		"last 1 safari version"
-	  ]
+		"production": [
+			">0.2%",
+			"not dead",
+			"not op_mini all"
+		],
+		"development": [
+			"last 1 chrome version",
+			"last 1 firefox version",
+			"last 1 safari version"
+		]
 	},
 	"homepage": "./",
 	"devDependencies": {
-	  "@testing-library/jest-dom": "^5.16.4",
-	  "gh-pages": "^4.0.0",
-	  "react-test-renderer": "^17.0.2"
+		"@testing-library/jest-dom": "^5.16.4",
+		"gh-pages": "^4.0.0",
+		"json-server": "^0.17.0",
+		"react-test-renderer": "^17.0.2"
 	}
-  }
-  
+}

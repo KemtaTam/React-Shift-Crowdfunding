@@ -1,13 +1,11 @@
-import { Formik, Form, Field, ErrorMessage } from 'formik';
+import { Formik } from 'formik';
+import { Input, Form, FormItem } from 'formik-antd'
 import * as Yup from 'yup';
 import s from './Login.module.css';
 //import { Navigate } from "react-router-dom";
 import { NavLink } from 'react-router-dom';
-import passEye from '../../images/passEye.svg'
-import { useState } from 'react';
 
 const LoginForm = (props) => {
-	const [passFlag, setPassFlag] = useState(true);
 
 	return (
 		<Formik
@@ -31,15 +29,13 @@ const LoginForm = (props) => {
 						</div>
 						<div className={s.line_navigate}></div>
 						<div className={s.errorText}>{status}</div> 
-						<div >
-							<Field className={s.elemForm} type="email" name="email" placeholder="Email"/>
-							<ErrorMessage className={s.errorMes} name="email" component="div" />
-						</div>
-						<div>
-							<Field className={s.elemForm} type={passFlag ? "password" : "text"} name="password" placeholder="Password"/>
-							<img src={passEye} alt="eye" onClick={() => setPassFlag(!passFlag)}/>
-							<ErrorMessage className={s.errorMes} name="password" component="div" />
-						</div>
+							<FormItem name="email" >
+								<Input type="email" name="email" placeholder="Email" />
+							</FormItem>
+							<FormItem name="password" >
+               					<Input.Password name="password" placeholder="Password" />
+              				</FormItem>
+						{/* <Button className={s.bLogin} type="primary" htmlType="submit" disabled={isSubmitting}>Войти</Button> */}
 						<button className={s.bLogin} type="submit" disabled={isSubmitting}>Войти</button>
 					</div>
 				</Form>

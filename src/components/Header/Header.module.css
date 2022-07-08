@@ -29,13 +29,15 @@
 	background-color: white;
 	border-radius: 10px;
 }
-.searchInput{
-	border: none;
-	border-radius: 10px;
-	outline:none;
-}
-
 
 .line{
 	border-left: 1px solid white;
+}
+
+.profileLogo{
+	width: 50px;
+}
+.createProjectBlock{
+	display: flex;
+	align-items: center
 }

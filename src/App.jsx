@@ -1,21 +1,29 @@
-import {Routes, Route, BrowserRouter} from "react-router-dom";
+import { Provider } from "react-redux";
+import {Routes, Route, BrowserRouter, /* HashRouter */} from "react-router-dom";
 import './App.css';
+import { CreateProject } from "./components/CreateProject/CreateProject";
 import { Header } from './components/Header/Header';
-import { Login } from "./components/Login/Login";
+import LoginContainer from "./components/Login/LoginContainer";
 import { MainPage } from "./components/MainPage/MainPage";
+import { Profile } from "./components/Profile/Profile";
 import { Registration } from "./components/Registration/Registration";
+import store from "./redux/redux-store";
 
 function App() {
   return (
 	<BrowserRouter>
-		<div className="App">
-			<Header />
-			<Routes>
-				<Route path="/main-page" element={<MainPage />} />
-				<Route path="/login" element={<Login />} />
-				<Route path="/register" element={<Registration />} />
-			</Routes>
-		</div>
+		<Provider store={store}>
+			<div className="App">
+				<Header />
+				<Routes>
+					<Route path="/main-page" element={<MainPage />} />
+					<Route path="/login" element={<LoginContainer />} />
+					<Route path="/register" element={<Registration />} />
+					<Route path="/create-project" element={<CreateProject />} />
+					<Route path="/profile" element={<Profile />} />
+				</Routes>
+			</div>
+		</Provider>
 	</BrowserRouter>
   );
 }
