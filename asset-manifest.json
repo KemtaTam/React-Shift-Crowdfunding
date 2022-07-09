@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/React-Shift-Crowdfunding/static/css/main.653152f0.css",
-    "main.js": "/React-Shift-Crowdfunding/static/js/main.96c289c3.js",
+    "main.css": "/React-Shift-Crowdfunding/static/css/main.8be2ed24.css",
+    "main.js": "/React-Shift-Crowdfunding/static/js/main.0efa620c.js",
     "static/js/787.28cb0dcd.chunk.js": "/React-Shift-Crowdfunding/static/js/787.28cb0dcd.chunk.js",
     "static/media/defaultAva.svg": "/React-Shift-Crowdfunding/static/media/defaultAva.210bbaaafe29c4793d12403d76131d6b.svg",
     "static/media/passEye.svg": "/React-Shift-Crowdfunding/static/media/passEye.5cf531340d60aaae9dc39bedb4586d6a.svg",
     "static/media/profile.svg": "/React-Shift-Crowdfunding/static/media/profile.d41ae41f0069bb962a84ee728500582e.svg",
     "static/media/logo.svg": "/React-Shift-Crowdfunding/static/media/logo.48796c4ced40172bc4807a2e70c6cc48.svg",
     "index.html": "/React-Shift-Crowdfunding/index.html",
-    "main.653152f0.css.map": "/React-Shift-Crowdfunding/static/css/main.653152f0.css.map",
-    "main.96c289c3.js.map": "/React-Shift-Crowdfunding/static/js/main.96c289c3.js.map",
+    "main.8be2ed24.css.map": "/React-Shift-Crowdfunding/static/css/main.8be2ed24.css.map",
+    "main.0efa620c.js.map": "/React-Shift-Crowdfunding/static/js/main.0efa620c.js.map",
     "787.28cb0dcd.chunk.js.map": "/React-Shift-Crowdfunding/static/js/787.28cb0dcd.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.653152f0.css",
-    "static/js/main.96c289c3.js"
+    "static/css/main.8be2ed24.css",
+    "static/js/main.0efa620c.js"
   ]
 }
