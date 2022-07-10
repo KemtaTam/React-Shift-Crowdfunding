@@ -2,8 +2,8 @@ import { Formik } from 'formik';
 import { Input, Form, FormItem } from 'formik-antd'
 import * as Yup from 'yup';
 import s from './Login.module.css';
-//import { Navigate } from "react-router-dom";
 import { NavLink } from 'react-router-dom';
+import { Button } from 'antd';
 
 const LoginForm = (props) => {
 
@@ -15,8 +15,8 @@ const LoginForm = (props) => {
 				password: Yup.string().min(4, 'Должен содержать 4 символа или больше').required('Обязательно'),
 			  })}
 			onSubmit={(values, { setSubmitting, setStatus }) => {
-				console.log(JSON.stringify(values, null, 2));
 				values.password = '';
+				console.log(JSON.stringify(values, null, 2));
 				setSubmitting(false);
 			}}
 		>
@@ -35,8 +35,7 @@ const LoginForm = (props) => {
 							<FormItem name="password" >
                					<Input.Password name="password" placeholder="Password" />
               				</FormItem>
-						{/* <Button className={s.bLogin} type="primary" htmlType="submit" disabled={isSubmitting}>Войти</Button> */}
-						<button className={s.bLogin} type="submit" disabled={isSubmitting}>Войти</button>
+						<Button className={s.bLogin} type="primary" htmlType="submit" disabled={isSubmitting}>Войти</Button>
 					</div>
 				</Form>
 			)}

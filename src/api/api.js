@@ -13,11 +13,12 @@ export const testAPI = {
 		return instance.get(`posts`)
 			.then(response => response.data)
 	},
-	addPosts() {
-		return instance.post(`posts`, { "id": 2, "title": "json-server", "author": "typicode" })
-			.then(response => {
-				let a =response.data;
-				return a;
-			})
+	addPosts(id) {
+		return instance.post(`posts`, { "id": id, "title": "json-server", "author": "typicode" })
+			.then(response => response.data)
+	},
+	addUser(user) {
+		return instance.post(`users`, user)
+			.then(response => response.data)
 	}
 }

@@ -11,10 +11,14 @@ export const authReducer = (state=initialState, action) => {
 	return state
  }
 
+
+ //thunk creators
  export const getPosts = () => async (dispatch) => {
 	testAPI.getPosts();
 }
- export const addPosts = () => async (dispatch) => {
-	const data = await testAPI.addPosts();
-	debugger
+ export const addPosts = (id) => async (dispatch) => {
+	testAPI.addPosts(id);
+}
+ export const addUser = (user) => async (dispatch) => {
+	testAPI.addUser(user);
 }

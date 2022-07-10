@@ -11,3 +11,14 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+/* Изменение стилей ant-design'а */
+.ant-form-item-explain-error.ant-form-item-explain-error{	/* Сообщение об ошибке */
+	color: red;
+	font-size: 12px;
+	margin-bottom: 2px;
+	font-weight: 500;
+}
+.ant-form-item.ant-form-item{	/* инпут */
+	margin-bottom: 5px;
+}

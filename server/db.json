@@ -1,24 +1,39 @@
 {
-	"posts": [
-	{
-		"id": 1,
-		"title": "json-server",
-		"author": "typicode"
-	},
-	{
-		"id": 2,
-		"title": "json-server",
-		"author": "typicode"
-	}
-	],
-	"users": [
-	{
-		"id": 1,
-		"email": "test@mail.ru"
-	},
-	{
-		"id": 2,
-		"email": "test2@mail2.ru"
-	}
-	]
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    },
+    {
+      "id": 2,
+      "title": "json-server",
+      "author": "typicode"
+    },
+    {
+      "id": 3,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "name": "anime lala pum",
+      "email": "test@mail.ru",
+      "password": "kukareku"
+    },
+    {
+      "name": "Филхан Максим qqqq",
+      "email": "maksimbul2000@gmail.com",
+      "password": "qweqwe",
+      "id": 2
+    },
+    {
+      "name": "пам Бум ",
+      "email": "maksimbul2000@gmail.com",
+      "password": "ййййй",
+      "id": 3
+    }
+  ]
 }

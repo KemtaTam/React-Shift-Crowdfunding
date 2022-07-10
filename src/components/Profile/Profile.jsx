@@ -12,11 +12,11 @@ export const Profile = (props) => {
 							src={defaultAva} alt="ava">
 						</img> 
 						<div className={s.profile_info}>
-							<div className={s.profile_name}>{/* {props.usersData.fullName} */}Иванов Бильбо Бегинс</div> 
+							<div className={s.profile_name}>Иванов Бильбо Бегинс</div> 
 						</div>
 					</div>
 				</div>
-				<Projects />
+				<Projects {...props}/>
 			</div>
 		</section>
 	)

@@ -11,7 +11,7 @@ export const Header = (props) => {
 
 			<div className={s.nav_right}>
 				<div className={s.search}>
-					<Search placeholder="input search text" allowClear/>
+					<Search allowClear/>
 				</div>
 				<div className={s.line}></div>
 				<div className={s.createProjectBlock}>  

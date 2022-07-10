@@ -32,8 +32,14 @@ const RegistrationForm = (props) => {
 			  })}
 			onSubmit={(values, { setSubmitting, setStatus }) => {
 				console.log(JSON.stringify(values, null, 2));
-				values.password = '';
+				let user = {
+					"name":  values.secondName + ' ' + values.name + ' ' + values.middleName,
+					"email": values.email,
+					"password": values.password
+				}
+				props.addUser(user);
 				setSubmitting(false);
+				values.password = '';
 			}}
 		>
 			{({ isSubmitting, status }) => (
