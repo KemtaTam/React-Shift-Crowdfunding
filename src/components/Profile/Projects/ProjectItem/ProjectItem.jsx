@@ -1,7 +1,6 @@
 import s from './ProjectItem.module.css';
 
 export const ProjectItem = (props) => {
-	debugger
 	return (
 		<div className={s.projectEl}>
 			<div className={s.projectEl_title}>{props.projectName}</div>

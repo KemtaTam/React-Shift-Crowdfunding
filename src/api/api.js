@@ -9,14 +9,6 @@ const instance = axios.create({
 })
 
 export const testAPI = {
-	getPosts() {
-		return instance.get(`posts`)
-			.then(response => response.data)
-	},
-	addPosts(id) {
-		return instance.post(`posts`, { "id": id, "title": "json-server", "author": "typicode" })
-			.then(response => response.data)
-	},
 	addUser(user) {
 		return instance.post(`users`, user)
 			.then(response => response.data)

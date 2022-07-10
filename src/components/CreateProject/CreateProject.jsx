@@ -15,7 +15,7 @@ const CreateProjectForm = (props) => {
 			onSubmit={(values, { setSubmitting, setStatus }) => {
 				if(!values.summ) values.summ = 0;
 				console.log(JSON.stringify(values, null, 2));
-				values.password = '';
+				props.addProject(values);
 				setSubmitting(false);
 			}}
 		>
