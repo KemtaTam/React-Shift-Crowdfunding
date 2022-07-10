@@ -7,13 +7,13 @@ import { Button } from 'antd';
 const CreateProjectForm = (props) => {
 	return (
 		<Formik
-			initialValues={{ projectName: '', description: '', summ: 1000}}
+			initialValues={{ projectName: '', projectDesc: '', requiredAmount: 1000}}
 			validationSchema={Yup.object({
 				projectName: Yup.string().required('Обязательно'),
-				description: Yup.string().required('Обязательно'),
+				projectDesc: Yup.string().required('Обязательно'),
 			  })}
 			onSubmit={(values, { setSubmitting, setStatus }) => {
-				if(!values.summ) values.summ = 0;
+				if(!values.requiredAmount) values.requiredAmount = 0;
 				console.log(JSON.stringify(values, null, 2));
 				props.addProject(values);
 				setSubmitting(false);
@@ -27,11 +27,11 @@ const CreateProjectForm = (props) => {
 							<FormItem name="projectName" >
 								<Input name="projectName" placeholder="Название проекта *" />
 							</FormItem>
-							<FormItem name="description" >
-               					<Input.TextArea name="description" placeholder="Описание проекта *" />
+							<FormItem name="projectDesc" >
+               					<Input.TextArea name="projectDesc" placeholder="Описание проекта *" />
               				</FormItem>
-							<FormItem name="summ" label="Сумма" required>
-               					<InputNumber  name="summ" placeholder="Сумма" addonAfter="₽" min={0}/>
+							<FormItem name="requiredAmount" label="Сумма" required>
+               					<InputNumber  name="requiredAmount" placeholder="Сумма" addonAfter="₽" min={0}/>
               				</FormItem>
 						<div className={s.wrapperButSub}>
 							<Button type="default" htmlType="submit" disabled={isSubmitting} className={s.bSub}>Готово!</Button>

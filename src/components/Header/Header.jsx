@@ -15,7 +15,7 @@ export const Header = (props) => {
 				</div>
 				<div className={s.line}></div>
 				<div className={s.createProjectBlock}>  
-					<NavLink to={'/create-project'}>Создать проект</NavLink>
+					<NavLink to={'/profile'}>Создать проект</NavLink>
 				</div>
 				<div className={s.line}></div>
 				<div className={s.profileBlock}>  

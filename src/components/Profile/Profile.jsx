@@ -1,6 +1,7 @@
 import s from './Profile.module.css';
 import { Projects } from './Projects/Projects';
 import defaultAva from '../../images/defaultAva.svg'
+import { CreateProject } from '../CreateProject/CreateProject';
 
 export const Profile = (props) => {
 	return (
@@ -17,6 +18,7 @@ export const Profile = (props) => {
 					</div>
 				</div>
 				<Projects {...props}/>
+				<CreateProject {...props}/>
 			</div>
 		</section>
 	)
