@@ -1,16 +1,16 @@
-import { Formik, Form, Field, ErrorMessage } from 'formik';
+import { Formik} from 'formik';
+import { Input, Form, FormItem } from 'formik-antd'
 import * as Yup from 'yup';
 import s from '../Login/Login.module.css';
-//import { Navigate } from "react-router-dom";
 import { NavLink } from 'react-router-dom';
-import { useState } from 'react';
+import { Button } from 'antd';
 
 /* matches(/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{2,})/,
 "Должен содержать от 5 до 255 символов, одну большую букву, одну маленькую, одну цифру и один специальный символ"
 ) */
 
 const RegistrationForm = (props) => {
-	const [passFlag, setPassFlag] = useState(true);
+	const activeLink = ({isActive}) => isActive ? s.active : s.form_navigateEl; 	//для подсветки активной кнопки
 
 	return (
 		<Formik
@@ -45,36 +45,30 @@ const RegistrationForm = (props) => {
 				<Form className={s.form}>
 					<div className={`${s.formWrapper} ${status && s.error}`}> 
 						<div className={s.form_navigate}>
-							<div className={s.form_navigateEl}><NavLink to={'/login'}>Войти</NavLink></div>
-							<div className={s.form_navigateEl}><NavLink to={'/register'}>Регистрация</NavLink></div>
+							<NavLink to={'/login'} className={activeLink}>Войти</NavLink>
+							<NavLink to={'/register'} className={activeLink}>Регистрация</NavLink>
 						</div>
 						<div className={s.line_navigate}></div>
 						<div className={s.errorText}>{status}</div> 
-						<div >
-							<Field className={s.elemForm} name="name" placeholder="Имя*"/>
-							<ErrorMessage className={s.errorMes} name="name" component="div" />
-						</div>
-						<div >
-							<Field className={s.elemForm} name="secondName" placeholder="Фамилия*"/>
-							<ErrorMessage className={s.errorMes} name="secondName" component="div" />
-						</div >
-						<div >
-							<Field className={s.elemForm} name="middleName" placeholder="Отчество"/>
-							<ErrorMessage className={s.errorMes} name="middleName" component="div" />
-						</div>
-						<div >
-							<Field className={s.elemForm} type="email" name="email" placeholder="Email*"/>
-							<ErrorMessage className={s.errorMes} name="email" component="div" />
-						</div>
-						<div>
-						<Field className={s.elemForm} type={passFlag ? "password" : "text"} name="password" placeholder="Password*"/>
-							<ErrorMessage className={s.errorMes} name="password" component="div" />
-						</div>
-						<div>
-							<Field className={s.elemForm} type="password" name="repeatPassword" placeholder="Repeat rassword*"/>
-							<ErrorMessage className={s.errorMes} name="repeatPassword" component="div" />
-						</div>
-						<button className={s.bLogin} type="submit" disabled={isSubmitting}>Зарегистрироваться</button>
+						<FormItem name="name" >
+							<Input name="name" placeholder="Имя*" className={s.elemForm}/>
+						</FormItem>
+						<FormItem name="secondName" >
+							<Input name="secondName" placeholder="Фамилия*" className={s.elemForm}/>
+						</FormItem>
+						<FormItem name="middleName" >
+							<Input name="middleName" placeholder="Отчество" className={s.elemForm}/>
+						</FormItem>
+						<FormItem name="email" >
+							<Input type="email" name="email" placeholder="Email*" className={s.elemForm}/>
+						</FormItem>
+						<FormItem name="password" >
+							<Input.Password type="password" name="password" placeholder="Password*" className={s.elemForm}/>
+						</FormItem>
+						<FormItem name="repeatPassword" >
+							<Input.Password type="password" name="repeatPassword" placeholder="Подтвердите пароль*" className={s.elemForm}/>
+						</FormItem>
+						<Button className={s.bLogin} type="primary" htmlType="submit" disabled={isSubmitting}>Регистрация</Button>
 					</div>
 				</Form>
 			)}

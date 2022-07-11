@@ -2,12 +2,13 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import reportWebVitals from './reportWebVitals';
 import "antd/dist/antd.css";
+import { BrowserRouter,  /* HashRouter */ } from 'react-router-dom';
 
 ReactDOM.render(
-	<App />,
+	<BrowserRouter>
+		<App />
+	</BrowserRouter>,
 document.getElementById('root')
 );
 
-reportWebVitals();

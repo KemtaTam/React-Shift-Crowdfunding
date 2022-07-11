@@ -2,7 +2,6 @@ import { ProjectItem } from './ProjectItem/ProjectItem';
 import s from './Projects.module.css';
 
 export const Projects = (props) => {
-	debugger
 	let projectItem = props.projectsData.map(el => <ProjectItem {...el} key={el.id}/>)
 
 	return (

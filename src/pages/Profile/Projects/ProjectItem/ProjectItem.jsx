@@ -13,7 +13,7 @@ export const ProjectItem = (props) => {
 				<div className={s.lineEmpty}>
 					<div className={s.lineFilled} style={{width: collectedLineWidth + '%'}}></div>
 				</div>
-				<div className={s.summ}>{props.requiredAmount}</div>
+				<div className={s.summ}>{props.collectedAmount + '/' + props.requiredAmount + '₽'}</div>
 			</div>
 		</div>
 	)

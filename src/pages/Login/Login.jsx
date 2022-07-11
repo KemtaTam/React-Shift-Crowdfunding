@@ -6,6 +6,7 @@ import { NavLink } from 'react-router-dom';
 import { Button } from 'antd';
 
 const LoginForm = (props) => {
+	const activeLink = ({isActive}) => isActive ? s.active : s.form_navigateEl;		//для подсветки активной кнопки
 
 	return (
 		<Formik
@@ -24,16 +25,16 @@ const LoginForm = (props) => {
 				<Form className={s.form}>
 					<div className={`${s.formWrapper} ${status && s.error}`}> 
 						<div className={s.form_navigate}>
-							<div className={s.form_navigateEl}><NavLink to={'/login'}>Войти</NavLink></div>
-							<div className={s.form_navigateEl}><NavLink to={'/register'}>Регистрация</NavLink></div>
+							<NavLink to={'/login'} className={activeLink}>Войти</NavLink>
+							<NavLink to={'/register'} className={activeLink}>Регистрация</NavLink>
 						</div>
 						<div className={s.line_navigate}></div>
 						<div className={s.errorText}>{status}</div> 
 							<FormItem name="email" >
-								<Input type="email" name="email" placeholder="Email" />
+								<Input type="email" name="email" placeholder="Email" className={s.elemForm}/>
 							</FormItem>
 							<FormItem name="password" >
-               					<Input.Password name="password" placeholder="Password" />
+               					<Input.Password name="password" placeholder="Password" className={s.elemForm}/>
               				</FormItem>
 						<Button className={s.bLogin} type="primary" htmlType="submit" disabled={isSubmitting}>Войти</Button>
 					</div>

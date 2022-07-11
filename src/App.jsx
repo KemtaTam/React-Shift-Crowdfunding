@@ -1,5 +1,5 @@
 import { Provider } from "react-redux";
-import {Routes, Route, BrowserRouter, /* HashRouter */} from "react-router-dom";
+import {Routes, Route} from "react-router-dom";
 import './App.css';
 import { Header } from './components/Header/Header';
 import LoginContainer from "./pages/Login/LoginContainer";
@@ -11,20 +11,18 @@ import {store} from "./redux/redux-store";
 
 function App() {
   return (
-	<BrowserRouter>
-		<Provider store={store}>
-			<div className="App">
-				<Header />
-				<Routes>
-					<Route path="/" element={<MainPage />} />
-					<Route path="/login" element={<LoginContainer />} />
-					<Route path="/register" element={<RegistrationContainer />} />
-					<Route path="/profile" element={<ProfileContainer />} />
-					<Route path="*" element={ <NotFound404 />} />
-				</Routes>
-			</div>
-		</Provider>
-	</BrowserRouter>
+	<Provider store={store}>
+		<div className="App">
+			<Header />
+			<Routes>
+				<Route path="/" element={<MainPage />} />
+				<Route path="/login" element={<LoginContainer />} />
+				<Route path="/register" element={<RegistrationContainer />} />
+				<Route path="/profile" element={<ProfileContainer />} />
+				<Route path="*" element={ <NotFound404 />} />
+			</Routes>
+		</div>
+	</Provider>
   );
 }
 
