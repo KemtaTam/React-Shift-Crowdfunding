@@ -1,9 +1,10 @@
 import s from './Profile.module.css';
 import { Projects } from './Projects/Projects';
-import defaultAva from '../../images/defaultAva.svg'
-import { CreateProject } from '../CreateProject/CreateProject';
+import defaultAva from '../../Assets/images/defaultAva.svg'
+import { CreateProject } from './CreateProject/CreateProject';
 
 export const Profile = (props) => {
+
 	return (
 		<section className={s.content}>
 			<div className={s.profile}>
@@ -13,12 +14,12 @@ export const Profile = (props) => {
 							src={defaultAva} alt="ava">
 						</img> 
 						<div className={s.profile_info}>
-							<div className={s.profile_name}>Иванов Бильбо Бегинс</div> 
+							<div className={s.profile_name}>{props.name}</div> 
 						</div>
 					</div>
 				</div>
-				<Projects {...props}/>
 				<CreateProject {...props}/>
+				<Projects {...props}/>
 			</div>
 		</section>
 	)

@@ -47,16 +47,15 @@
 }
 
 .titleCrowd {
-position: absolute;
-width: 930px;
-height: 67px;
-left: 150px;
-top: 257px;
-color: black;
-font-family: 'Montserrat';
-font-style: normal;
-font-weight: 700;
-font-size: 55px;
-line-height: 67px;
+	position: absolute;
+	width: 930px;
+	height: 67px;
+	left: 150px;
+	top: 257px;
+	color: black;
+	font-family: 'Montserrat';
+	font-weight: 700;
+	font-size: 55px;
+	line-height: 67px;
 }
 

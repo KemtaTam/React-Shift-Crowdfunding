@@ -5,11 +5,10 @@
 	padding-left: 30px;
 	padding-right: 30px;
 	width: 442px;
-    min-height: 484px;
     height: max-content;
 	margin-right: auto;
 	margin-left: auto;
-	margin-top: 70px;
+	margin-top: 20px;
 	border: 1px solid black;
 }
 
@@ -22,6 +21,8 @@
 	width: 150px;
 	height: min-content;
 	font-size: 20px;
+	margin-top: 20px;
+	margin-bottom: 20px;
 }
 
 .projectTitle{

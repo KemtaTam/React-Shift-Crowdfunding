@@ -2,7 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import { compose } from "redux";
 import { Registration } from "./Registration";
-import { addUser } from "../../redux/redusers/auth-reduser";
+import { addUser } from "../../redux/reducers/auth-reducer";
 
 const RegistrationContainer = (props) =>{
 	return ( 

@@ -4,6 +4,8 @@
 	background-color: rgba(46, 143, 174, 0.15);
 	border-radius: 23px;
 	margin-right: 20px;
+	margin-bottom: 20px;
+	padding: 10px;
 }
 .projectEl_title{
 	font-size: 20px;
@@ -12,16 +14,18 @@
 	justify-content: center;
 	padding-top: 10px;
 }
+.creatorName{
+	display: flex;
+	justify-content: center;
+	font-weight: 500;
+}
 .projectEl_desk{
 	color: #636363;
-	margin-left: 10px;
 	margin-top: 10px;
 	font-size: 16px;
 }
 
 .summ_wrapper{
-	margin-left: 10px;
-	margin-right: 10px;
 	margin-top: 20px;
 }
 .lineEmpty{
@@ -31,7 +35,6 @@
 	border-radius: 8px;
 }
 .lineFilled{
-	width: calc(100% - 50px);
 	height: 10px;
 	background-color: #DDC33D;
 	border-radius: 8px;

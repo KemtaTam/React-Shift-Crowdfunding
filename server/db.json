@@ -1,21 +1,4 @@
 {
-  "posts": [
-    {
-      "id": 1,
-      "title": "json-server",
-      "author": "typicode"
-    },
-    {
-      "id": 2,
-      "title": "json-server",
-      "author": "typicode"
-    },
-    {
-      "id": 3,
-      "title": "json-server",
-      "author": "typicode"
-    }
-  ],
   "users": [
     {
       "id": 1,
@@ -33,6 +16,32 @@
       "name": "пам Бум ",
       "email": "maksimbul2000@gmail.com",
       "password": "ййййй",
+      "id": 3
+    }
+  ],
+  "projects": [
+    {
+      "projectName": "Крутой проект",
+      "projectDesc": "asdasdads",
+      "requiredAmount": 20000,
+      "collectedAmount": 0,
+      "creatorName": "Иванов Бильбо Бегинс",
+      "id": 1
+    },
+    {
+      "projectName": "Название проекта",
+      "projectDesc": "Описание крутого проекта, в который необходимо...",
+      "requiredAmount": 1000,
+      "creatorName": "Иванов Бильбо Бегинс",
+      "collectedAmount": 0,
+      "id": 2
+    },
+    {
+      "projectName": "Очень крутой проект",
+      "projectDesc": "Сбор средств на продолжение комиксов о Человеке-Пауке!",
+      "requiredAmount": 12000,
+      "creatorName": "Иванов Бильбо Бегинс",
+      "collectedAmount": 0,
       "id": 3
     }
   ]

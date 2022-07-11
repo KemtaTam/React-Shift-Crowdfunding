@@ -4,7 +4,6 @@ import s from '../Login/Login.module.css';
 //import { Navigate } from "react-router-dom";
 import { NavLink } from 'react-router-dom';
 import { useState } from 'react';
-import passEye from '../../images/passEye.svg'
 
 /* matches(/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{2,})/,
 "Должен содержать от 5 до 255 символов, одну большую букву, одну маленькую, одну цифру и один специальный символ"
@@ -69,7 +68,6 @@ const RegistrationForm = (props) => {
 						</div>
 						<div>
 						<Field className={s.elemForm} type={passFlag ? "password" : "text"} name="password" placeholder="Password*"/>
-							<img src={passEye} alt="eye" onClick={() => setPassFlag(!passFlag)}/>
 							<ErrorMessage className={s.errorMes} name="password" component="div" />
 						</div>
 						<div>

@@ -1,0 +1,14 @@
+.wrapper{
+	display: flex;
+	align-items: center;
+}
+.img{
+	width: 40%;
+	height: 90vh;
+}
+.errorText{
+	font-size: 50px;
+	position: absolute;
+	left: 22%;
+	top: 65%;
+}
