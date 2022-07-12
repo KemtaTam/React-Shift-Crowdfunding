@@ -1,18 +1,19 @@
 {
   "files": {
-    "main.css": "/React-Shift-Crowdfunding/static/css/main.98f068d3.css",
-    "main.js": "/React-Shift-Crowdfunding/static/js/main.fab3e182.js",
-    "static/js/787.28cb0dcd.chunk.js": "/React-Shift-Crowdfunding/static/js/787.28cb0dcd.chunk.js",
+    "main.css": "/React-Shift-Crowdfunding/static/css/main.164cf9c9.css",
+    "main.js": "/React-Shift-Crowdfunding/static/js/main.ed233bbe.js",
+    "static/media/NotFound404.jpg": "/React-Shift-Crowdfunding/static/media/NotFound404.05acb6dd84bdf40cbf83.jpg",
+    "static/media/bg-woman2.png": "/React-Shift-Crowdfunding/static/media/bg-woman2.1583f8cf937c1ec52e86.png",
     "static/media/defaultAva.svg": "/React-Shift-Crowdfunding/static/media/defaultAva.210bbaaafe29c4793d12403d76131d6b.svg",
     "static/media/profile.svg": "/React-Shift-Crowdfunding/static/media/profile.d41ae41f0069bb962a84ee728500582e.svg",
-    "static/media/logo.svg": "/React-Shift-Crowdfunding/static/media/logo.48796c4ced40172bc4807a2e70c6cc48.svg",
+    "static/media/likeOff.svg": "/React-Shift-Crowdfunding/static/media/likeOff.1038d655608cc53523f04b7577f481a6.svg",
     "index.html": "/React-Shift-Crowdfunding/index.html",
-    "main.98f068d3.css.map": "/React-Shift-Crowdfunding/static/css/main.98f068d3.css.map",
-    "main.fab3e182.js.map": "/React-Shift-Crowdfunding/static/js/main.fab3e182.js.map",
-    "787.28cb0dcd.chunk.js.map": "/React-Shift-Crowdfunding/static/js/787.28cb0dcd.chunk.js.map"
+    "static/media/likeOn.svg": "/React-Shift-Crowdfunding/static/media/likeOn.d1126d78615b3f7421d981059a09ca7e.svg",
+    "main.164cf9c9.css.map": "/React-Shift-Crowdfunding/static/css/main.164cf9c9.css.map",
+    "main.ed233bbe.js.map": "/React-Shift-Crowdfunding/static/js/main.ed233bbe.js.map"
   },
   "entrypoints": [
-    "static/css/main.98f068d3.css",
-    "static/js/main.fab3e182.js"
+    "static/css/main.164cf9c9.css",
+    "static/js/main.ed233bbe.js"
   ]
 }
