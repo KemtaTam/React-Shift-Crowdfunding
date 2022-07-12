@@ -6,8 +6,8 @@ import { NavLink } from 'react-router-dom';
 import { Button } from 'antd';
 
 const LoginForm = (props) => {
-	const activeLink = ({isActive}) => isActive ? s.active : s.form_navigateEl;		//для подсветки активной кнопки
-
+	const activeLink = ({isActive}) => isActive ? s.form_navigate_el_active : s.form_navigate_el;		//для подсветки активной ссылки
+	
 	return (
 		<Formik
 			initialValues={{ email: '', password: '' }}

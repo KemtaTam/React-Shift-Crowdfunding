@@ -19,19 +19,25 @@ export const Header = (props) => {
 				</svg>
 			</NavLink>
 
-			<div className={s.nav_right}>
-				<div className={s.search}>
-					<Search allowClear/>
-				</div>
-				<div className={s.line}></div>
-				<div className={s.createProjectBlock}>  
-					<NavLink to={'/profile'}>Создать проект</NavLink>
-				</div>
-				<div className={s.line}></div>
-				<div className={s.profileBlock}>  
-					<NavLink to={'/profile'}><img className={s.profileLogo} src={profile} alt="profile icon" /></NavLink>
-				</div>
-			</div>
+			<nav className={s.nav}>
+				<ul className={s.ul}>
+					<li className={s.search}>
+						<Search allowClear/>
+					</li>
+					<span className={s.line}></span>
+					<li className={s.li}>  
+						<NavLink to={'/projects'}>Все проекты</NavLink>
+					</li>
+					<span className={s.line}></span>
+					<li className={s.li}>  
+						<NavLink to={'/profile'}>Создать проект</NavLink>
+					</li>
+					<span className={s.line}></span>
+					<li className={s.li}>  
+						<NavLink to={'/profile'}><img className={s.profileLogo} src={profile} alt="profile icon" /></NavLink>		{/* икона либо надпись войти будет*/}
+					</li>
+				</ul>
+			</nav>
 			
 		</header>
 	)

@@ -7,16 +7,10 @@
       "password": "kukareku"
     },
     {
-      "name": "Филхан Максим qqqq",
       "email": "maksimbul2000@gmail.com",
-      "password": "qweqwe",
+      "password": "$2a$10$PcI9bdqHpqV9rc7DAoDzIOW01VVBvY4YM6oXv7e3k7apTmwuoUw2W",
+      "name": "Филхан Максим asdd",
       "id": 2
-    },
-    {
-      "name": "пам Бум ",
-      "email": "maksimbul2000@gmail.com",
-      "password": "ййййй",
-      "id": 3
     }
   ],
   "projects": [
@@ -26,14 +20,18 @@
       "requiredAmount": 20000,
       "collectedAmount": 0,
       "creatorName": "Иванов Бильбо Бегинс",
+      "likesCount": 0,
+      "likeFlag": false,
       "id": 1
     },
     {
       "projectName": "Название проекта",
-      "projectDesc": "Описание крутого проекта, в который необходимо...",
+      "projectDesc": "Описание крутого проекта, в который необходимо задонатить",
       "requiredAmount": 1000,
       "creatorName": "Иванов Бильбо Бегинс",
       "collectedAmount": 0,
+      "likesCount": 10,
+      "likeFlag": true,
       "id": 2
     },
     {
@@ -42,15 +40,9 @@
       "requiredAmount": 12000,
       "creatorName": "Иванов Бильбо Бегинс",
       "collectedAmount": 0,
+      "likesCount": 2,
+      "likeFlag": false,
       "id": 3
-    },
-    {
-      "projectName": "ыва",
-      "projectDesc": "ыва",
-      "requiredAmount": 1000,
-      "creatorName": "Иванов Бильбо Бегинс",
-      "collectedAmount": 0,
-      "id": 4
     }
   ]
 }

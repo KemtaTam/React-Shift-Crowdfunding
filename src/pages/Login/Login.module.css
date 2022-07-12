@@ -2,27 +2,22 @@
 .formWrapper{
 	border-radius: 23px;
 	width: min-content;
-	padding-top: 15px;
-	padding-left: 30px;
-	padding-right: 30px;
-	padding-bottom: 15px;
-	background-color: #2E8FAE;
+	padding: 15px 30px 15px 30px;
+	margin: 70px auto 0 auto;
+	background-color: rgba(242, 247, 247, 0.849);
 	width: 442px;
     height: max-content;
-	margin-right: auto;
-	margin-left: auto;
-	margin-top: 70px;
 }
 
 .form_navigate{
 	display: flex;
 	justify-content: space-between
 }
-.form_navigateEl{
+.form_navigate_el{
 	color: black;
 	font-size: 26px;
 }
-.active{
+.form_navigate_el_active{
 	color: #39A8FFFF;
 	font-size: 26px;
 }

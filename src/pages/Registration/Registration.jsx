@@ -1,5 +1,5 @@
 import { Formik} from 'formik';
-import { Input, Form, FormItem } from 'formik-antd'
+import { Input, Form, FormItem, Checkbox } from 'formik-antd'
 import * as Yup from 'yup';
 import s from '../Login/Login.module.css';
 import { NavLink } from 'react-router-dom';
@@ -10,11 +10,11 @@ import { Button } from 'antd';
 ) */
 
 const RegistrationForm = (props) => {
-	const activeLink = ({isActive}) => isActive ? s.active : s.form_navigateEl; 	//для подсветки активной кнопки
+	const activeLink = ({isActive}) => isActive ? s.form_navigate_el_active : s.form_navigate_el; 	//для подсветки активной кнопки
 
 	return (
 		<Formik
-			initialValues={{ email: '', password: '', repeatPassword: '', name: '', secondName: '', middleName: ''}}
+			initialValues={{ email: '', password: '', repeatPassword: '', name: '', secondName: '', middleName: '', is18: false}}
 			validationSchema={Yup.object({
 				email: Yup.string().email('Некорректный email').required('Обязательно').max(255, 'Email должен содержать не более 255 символов'),
 				password: Yup.string().min(5, 'Должен содержать от 5 до 255 символов').max(255, "Должен содержать от 5 до 255 символов").required('Обязательно'),
@@ -28,6 +28,7 @@ const RegistrationForm = (props) => {
 				name: Yup.string().max(32, 'Имя должно содержать не более 32 символов').required('Обязательно'),
 				secondName: Yup.string().max(32, 'Фамилия должна содержать не более 32 символов').required('Обязательно'),
 				middleName: Yup.string().max(32, 'Отчество должно содержать не более 32 символов'),
+				is18: Yup.bool().oneOf([true], 'Не подтверждено')
 			  })}
 			onSubmit={(values, { setSubmitting, setStatus }) => {
 				console.log(JSON.stringify(values, null, 2));
@@ -37,8 +38,8 @@ const RegistrationForm = (props) => {
 					"password": values.password
 				}
 				props.addUser(user);
-				setSubmitting(false);
 				values.password = '';
+				setSubmitting(false);
 			}}
 		>
 			{({ isSubmitting, status }) => (
@@ -67,6 +68,9 @@ const RegistrationForm = (props) => {
 						</FormItem>
 						<FormItem name="repeatPassword" >
 							<Input.Password type="password" name="repeatPassword" placeholder="Подтвердите пароль*" className={s.elemForm}/>
+						</FormItem>
+						<FormItem name="is18" >
+							<Checkbox name="is18">Подверждаю, что исполнилось 18 лет</Checkbox>
 						</FormItem>
 						<Button className={s.bLogin} type="primary" htmlType="submit" disabled={isSubmitting}>Регистрация</Button>
 					</div>

@@ -7,7 +7,7 @@ const instance = axios.create({
 
 export const usersAPI = {
 	addUser(user) {
-		return instance.post(`users`, user)
+		return instance.post(`register`, user)
 			.then(response => response.data)
 	},
 	addProject(project) {

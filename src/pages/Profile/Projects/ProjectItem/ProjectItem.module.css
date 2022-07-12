@@ -1,11 +1,12 @@
 .projectEl{
 	width: 239px;
-	height: 230px;
+	height: 300px;
 	background-color: rgba(46, 143, 174, 0.15);
 	border-radius: 23px;
 	margin-right: 20px;
 	margin-bottom: 20px;
 	padding: 10px;
+	position: relative;
 }
 .projectEl_title{
 	font-size: 20px;
@@ -43,4 +44,18 @@
 	display: flex;
 	justify-content: flex-end;
 	margin-right: 10px;
+}
+
+.likes{
+	display: flex;
+	position: absolute;
+	bottom: 5px;
+}
+.likes img{
+	width: 40px;
+	cursor: pointer;
+	margin-right: 5px;
+}
+.likes span{
+	font-size: 20px;
 }

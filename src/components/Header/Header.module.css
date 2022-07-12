@@ -11,16 +11,20 @@
 	margin-left: 58px;
 	padding-top: 2px;
 }
-.nav_right{
+
+.nav{
+	margin-right: 20px;
+}
+.ul{
 	margin-right: 25px;
 	display: flex;
 	font-size: 32px;
 	line-height: 39.01px;
 }
-.nav_right > div{
+.ul > li{
 	margin-left: 33px;
 }
-.nav_right a{
+.li a{
 	color: white;
 }
 
@@ -32,16 +36,12 @@
 
 .line{
 	border-left: 1px solid white;
+	margin-left: 33px;
 }
 
 .profileLogo{
 	width: 50px;
 }
-.createProjectBlock{
-	display: flex;
-	align-items: center
-}
-
 .colorLogo:hover{
 	fill: black;
 	transition: all 0.3s;

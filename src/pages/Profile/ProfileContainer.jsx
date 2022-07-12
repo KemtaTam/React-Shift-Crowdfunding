@@ -1,7 +1,7 @@
 import { connect } from "react-redux";
 import { Profile } from "./Profile";
 import {getAuthUserData} from "../../redux/reducers/auth-reducer"
-import {addProject, addProjectTC, getProjectsTC} from "../../redux/reducers/profile-reducer"
+import { addProject, addProjectTC, getProjectsTC,changeLikesCount } from "../../redux/reducers/profile-reducer"
 import React, { useEffect } from "react";
 import { compose } from "redux";
 
@@ -27,6 +27,6 @@ let mapStateToProps = (state) => {
 
 export default compose(
 	 connect(mapStateToProps, {
-		getAuthUserData, addProject, addProjectTC, getProjectsTC
+		getAuthUserData, addProject, addProjectTC, getProjectsTC, changeLikesCount
 	}),
 )(ProfileContainer);

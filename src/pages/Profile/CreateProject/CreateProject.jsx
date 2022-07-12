@@ -1,5 +1,5 @@
 import { Formik } from 'formik';
-import { Input, Form, FormItem, InputNumber } from 'formik-antd'
+import { Input, Form, FormItem, InputNumber, Select } from 'formik-antd'
 import * as Yup from 'yup';
 import s from './CreateProject.module.css';
 import { Button } from 'antd';
@@ -7,14 +7,18 @@ import { Button } from 'antd';
 const CreateProjectForm = (props) => {
 	return (
 		<Formik
-			initialValues={{ projectName: '', projectDesc: '', requiredAmount: 1000, creatorName: props.name, collectedAmount: 0}}
+			initialValues={{ projectName: '', projectDesc: '', 
+				requiredAmount: 1000, creatorName: props.name, 
+				collectedAmount: 0, categories: '',
+				likesCount: 0, likeFlag: false
+			}}
 			validationSchema={Yup.object({
 				projectName: Yup.string().required('Обязательно'),
+				categories: Yup.string().required('Обязательно'),
 			  })}
 			onSubmit={(values, { setSubmitting, setStatus }) => {
 				if(!values.requiredAmount) values.requiredAmount = 0;
 				console.log(JSON.stringify(values, null, 2));
-				//props.addProject(values);
 				props.addProjectTC(values);
 				values.projectName = '';
 				values.projectDesc = '';
@@ -32,6 +36,17 @@ const CreateProjectForm = (props) => {
 							<FormItem name="projectDesc" >
                					<Input.TextArea name="projectDesc" placeholder="Описание проекта" />
               				</FormItem>
+							<FormItem name="categories" >
+								<Select name="categories" style={{ width: "100%" }} placeholder="Выбирете категорию">
+									<Select.Option value={"Медицина"}>Медицина</Select.Option>
+									<Select.Option value={"Образование"}>Образование</Select.Option>
+									<Select.Option value={"Спорт"}>Спорт</Select.Option>
+									<Select.Option value={"Искусство"}>Искусство</Select.Option>
+									<Select.Option value={"Строительство"}>Строительство</Select.Option>
+									<Select.Option value={"Технологии"}>Технологии</Select.Option>
+									<Select.Option value={"Другое"}>Другое</Select.Option>
+								</Select>
+							</FormItem>
 							<FormItem name="requiredAmount" label="Сумма" required>
                					<InputNumber  name="requiredAmount" placeholder="Сумма" addonAfter="₽" min={0}/>
               				</FormItem>
