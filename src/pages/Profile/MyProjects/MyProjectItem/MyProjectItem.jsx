@@ -1,10 +1,13 @@
-import s from './ProjectItem.module.css';
+import s from './MyProjectItem.module.css';
 import likeOn from '../../../../Assets/images/likeOn.svg'
 import likeOff from '../../../../Assets/images/likeOff.svg'
+import { Button } from 'antd';
+import { NavLink } from 'react-router-dom';
 
-export const ProjectItem = (props) => {
+export const MyProjectItem = (props) => {
 	//расчеты длины заполненности линии
-	const percentCollected = props.collectedAmount / props.requiredAmount * 100;
+	let percentCollected = props.collectedAmount / props.requiredAmount * 100;
+	if(percentCollected > 100) percentCollected = 100; 
 	const collectedLineWidth = 100 - (100 - percentCollected);
 
 	//чтобы в карточке отображать только часть описания
@@ -30,6 +33,7 @@ export const ProjectItem = (props) => {
 				</div>
 				<div className={s.summ}>{props.collectedAmount + '/' + props.requiredAmount + '₽'}</div>
 			</div>
+			<NavLink to={`/projects/${props.id}`}><Button className={s.bDonate} type='primary'>Поддержать</Button></NavLink>
 			<div className={s.likes}>
 				<img className={s.bLike} src={props.likeFlag ? likeOn : likeOff} alt="like" onClick={changeLikesCount}/> 
 				<span>{props.likesCount}</span>

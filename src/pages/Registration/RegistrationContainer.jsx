@@ -2,7 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import { compose } from "redux";
 import { Registration } from "./Registration";
-import { addUser } from "../../redux/reducers/auth-reducer";
+import { register } from "../../redux/reducers/auth-reducer";
 
 const RegistrationContainer = (props) =>{
 	return ( 
@@ -21,5 +21,5 @@ let mapStateToProps = (state) => {
 }
 
 export default compose(
-	connect(mapStateToProps, {addUser}))
+	connect(mapStateToProps, {register}))
 (RegistrationContainer);

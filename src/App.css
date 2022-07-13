@@ -53,3 +53,7 @@ html {
 	text-decoration: none;
   }
   /* ----------default------------ */
+
+.preloader.preloader{
+	width: 200px;
+}

@@ -2,7 +2,7 @@ import { Formik} from 'formik';
 import { Input, Form, FormItem, Checkbox } from 'formik-antd'
 import * as Yup from 'yup';
 import s from '../Login/Login.module.css';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import { Button } from 'antd';
 
 /* matches(/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{2,})/,
@@ -11,6 +11,7 @@ import { Button } from 'antd';
 
 const RegistrationForm = (props) => {
 	const activeLink = ({isActive}) => isActive ? s.form_navigate_el_active : s.form_navigate_el; 	//для подсветки активной кнопки
+	const navigate = useNavigate();
 
 	return (
 		<Formik
@@ -37,9 +38,10 @@ const RegistrationForm = (props) => {
 					"email": values.email,
 					"password": values.password
 				}
-				props.addUser(user);
+				props.register(user);
 				values.password = '';
 				setSubmitting(false);
+				navigate('/profile');
 			}}
 		>
 			{({ isSubmitting, status }) => (

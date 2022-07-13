@@ -1,11 +1,11 @@
-import { usersAPI } from "../../api/api";
+import { authAPI } from "../../api/api";
 
 const SET_USER_DATA = 'auth/SET_USER_DATA';
 
 let initialState = {
 	userId: null,
 	email: null,
-	name: "Иванов Бильбо Бегинс",
+	name: null,
 	isAuth: false,
 }
 
@@ -29,10 +29,31 @@ export const setAuthUserData = (userId, email, name, isAuth) => ({
 	payload: {userId, email, name, isAuth}
 })
 //thunk creators
-export const getAuthUserData = () => async (dispatch) => {
-	// здесь должно быть обращение к серверу
-	dispatch(setAuthUserData(null, null, initialState.name, true));		//временно
+export const getAuthUserData = () => async (dispatch) => {	
+	let id = localStorage.getItem("id");				// здесь должно быть обращение к серверу	
+	let name = localStorage.getItem("name");
+	let email = localStorage.getItem("email");
+	id && name && email && dispatch(setAuthUserData(id, email, name, true));	
 }
- export const addUser = (user) => async (dispatch) => {
-	usersAPI.addUser(user);
+export const register = (user) => async (dispatch) => {
+	let data = await authAPI.register(user);
+	let {id, email, name} = data.user;
+	localStorage.setItem("name", name);
+	localStorage.setItem("id", id);
+	localStorage.setItem("email", email);
+	dispatch(setAuthUserData(id, email, name, true));
+}
+export const login = (user) => async (dispatch) => {
+	const data = await authAPI.login(user);
+	let {id, email, name} = data.user;
+	localStorage.setItem("name", name);
+	localStorage.setItem("id", id);
+	localStorage.setItem("email", email);
+	dispatch(setAuthUserData(id, email, name, true));
+}
+export const logout = () => async (dispatch) => {
+	localStorage.removeItem("name");
+	localStorage.removeItem("id");
+	localStorage.removeItem("email");
+	dispatch(setAuthUserData(null, null, null, false));
 }

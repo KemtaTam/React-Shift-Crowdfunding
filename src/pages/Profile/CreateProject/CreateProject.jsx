@@ -3,6 +3,7 @@ import { Input, Form, FormItem, InputNumber, Select } from 'formik-antd'
 import * as Yup from 'yup';
 import s from './CreateProject.module.css';
 import { Button } from 'antd';
+import { ToastContainer, toast } from 'react-toastify';
 
 const CreateProjectForm = (props) => {
 	return (
@@ -10,7 +11,8 @@ const CreateProjectForm = (props) => {
 			initialValues={{ projectName: '', projectDesc: '', 
 				requiredAmount: 1000, creatorName: props.name, 
 				collectedAmount: 0, categories: '',
-				likesCount: 0, likeFlag: false
+				likesCount: 0, likeFlag: false,
+				userId: props.userId
 			}}
 			validationSchema={Yup.object({
 				projectName: Yup.string().required('Обязательно'),
@@ -22,7 +24,10 @@ const CreateProjectForm = (props) => {
 				props.addProjectTC(values);
 				values.projectName = '';
 				values.projectDesc = '';
+				values.categories = '';
+				values.requiredAmount = 1000;
 				setSubmitting(false);
+				toast.success("Проект создан!");
 			}}
 		>
 			{({ isSubmitting, status }) => (
@@ -53,6 +58,11 @@ const CreateProjectForm = (props) => {
 						<div className={s.wrapperButSub}>
 							<Button type="default" htmlType="submit" disabled={isSubmitting} className={s.bSub}>Готово!</Button>
 						</div>
+						<ToastContainer position="top-center" autoClose={1000} 
+							hideProgressBar={false} newestOnTop 
+							closeOnClick rtl={false} pauseOnFocusLoss 
+							draggable pauseOnHover
+						/>
 					</div>
 				</Form>
 			)}

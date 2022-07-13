@@ -11,6 +11,24 @@
       "password": "$2a$10$PcI9bdqHpqV9rc7DAoDzIOW01VVBvY4YM6oXv7e3k7apTmwuoUw2W",
       "name": "Филхан Максим asdd",
       "id": 2
+    },
+    {
+      "email": "a@mail.ru",
+      "password": "$2a$10$4gEC0mbFpXBhyrTLTrwICeylW1VYCSsB9c8SbLXhRpdxenxneSXiO",
+      "name": "Фархад Игнат Бульхат",
+      "id": 3
+    },
+    {
+      "email": "aa@mail.ru",
+      "password": "$2a$10$uMmrNBXvVrHhfzdfiVtbM.SNVNQTFzohFFIhHc4l8q6VGE3PlYMua",
+      "name": "Букавин Максим Лалу",
+      "id": 4
+    },
+    {
+      "email": "maksimbul2011100@gmail.com",
+      "password": "$2a$10$cmAhEGrOMZcsBUtpEy9LlOyi8bDqtcasX97FXPElQWGggkNHWxOQq",
+      "name": "ТЕСТ ТЕСТ ТЕСТ",
+      "id": 5
     }
   ],
   "projects": [
@@ -43,6 +61,53 @@
       "likesCount": 2,
       "likeFlag": false,
       "id": 3
+    },
+    {
+      "projectName": "ыва",
+      "projectDesc": "ыва",
+      "requiredAmount": 1000,
+      "creatorName": "Фархад Игнат Бульхат",
+      "collectedAmount": 0,
+      "categories": "Спорт",
+      "likesCount": 0,
+      "likeFlag": false,
+      "id": 4
+    },
+    {
+      "projectName": "qweqweqwe",
+      "projectDesc": "qweqweqweqwe",
+      "requiredAmount": 1000,
+      "creatorName": "Фархад Игнат Бульхат",
+      "collectedAmount": 0,
+      "categories": "Спорт",
+      "likesCount": 0,
+      "likeFlag": false,
+      "userId": "3",
+      "id": 5
+    },
+    {
+      "projectName": "sdf",
+      "projectDesc": "sdf",
+      "requiredAmount": 10005,
+      "creatorName": "Фархад Игнат Бульхат",
+      "collectedAmount": 0,
+      "categories": "Спорт",
+      "likesCount": 0,
+      "likeFlag": false,
+      "userId": "3",
+      "id": 6
+    },
+    {
+      "projectName": "sdfsdf",
+      "projectDesc": "sdfsdf",
+      "requiredAmount": 1000555,
+      "creatorName": "Букавин Максим Лалу",
+      "collectedAmount": 0,
+      "categories": "Технологии",
+      "likesCount": 0,
+      "likeFlag": false,
+      "userId": "4",
+      "id": 7
     }
   ]
 }

@@ -1,7 +1,8 @@
 import s from './Profile.module.css';
-import { Projects } from './Projects/Projects';
+import { MyProjects } from './MyProjects/MyProjects';
 import defaultAva from '../../Assets/images/defaultAva.svg'
 import { CreateProject } from './CreateProject/CreateProject';
+import { NavLink } from 'react-router-dom';
 
 export const Profile = (props) => {
 
@@ -15,11 +16,12 @@ export const Profile = (props) => {
 						</img> 
 						<div className={s.profile_info}>
 							<div className={s.profile_name}>{props.name}</div> 
+							<NavLink to={'/login'} onClick={() => props.logout()}>Выйти из аккаунта</NavLink>
 						</div>
 					</div>
 				</div>
 				<CreateProject {...props}/>
-				<Projects {...props}/>
+				<MyProjects {...props}/>
 			</div>
 		</section>
 	)

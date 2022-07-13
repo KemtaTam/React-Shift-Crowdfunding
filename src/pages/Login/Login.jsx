@@ -2,12 +2,13 @@ import { Formik } from 'formik';
 import { Input, Form, FormItem } from 'formik-antd'
 import * as Yup from 'yup';
 import s from './Login.module.css';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import { Button } from 'antd';
 
 const LoginForm = (props) => {
 	const activeLink = ({isActive}) => isActive ? s.form_navigate_el_active : s.form_navigate_el;		//для подсветки активной ссылки
-	
+	const navigate = useNavigate();
+
 	return (
 		<Formik
 			initialValues={{ email: '', password: '' }}
@@ -16,9 +17,11 @@ const LoginForm = (props) => {
 				password: Yup.string().min(4, 'Должен содержать 4 символа или больше').required('Обязательно'),
 			  })}
 			onSubmit={(values, { setSubmitting, setStatus }) => {
-				values.password = '';
 				console.log(JSON.stringify(values, null, 2));
+				props.login(values)
 				setSubmitting(false);
+				values.password = '';
+				navigate('/profile');
 			}}
 		>
 			{({ isSubmitting, status }) => (

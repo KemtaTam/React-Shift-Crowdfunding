@@ -1,5 +1,5 @@
 import s from "./Preloader.module.css"
-import loader from './../../../images/loader.gif';
+import loader from './../../../Assets/images/loader.gif';
 
 const Preloader = (props) => {
 	return (

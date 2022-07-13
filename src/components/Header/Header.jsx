@@ -34,7 +34,10 @@ export const Header = (props) => {
 					</li>
 					<span className={s.line}></span>
 					<li className={s.li}>  
-						<NavLink to={'/profile'}><img className={s.profileLogo} src={profile} alt="profile icon" /></NavLink>		{/* икона либо надпись войти будет*/}
+						{props.isAuth ? 
+							<NavLink to={'/profile'}><img className={s.profileLogo} src={profile} alt="profile icon" /></NavLink> :
+							<NavLink to={'/login'}>Войти</NavLink>
+						}		
 					</li>
 				</ul>
 			</nav>

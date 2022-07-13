@@ -1,6 +1,6 @@
 .projectEl{
 	width: 239px;
-	height: 300px;
+	height: 350px;
 	background-color: rgba(46, 143, 174, 0.15);
 	border-radius: 23px;
 	margin-right: 20px;
@@ -44,6 +44,15 @@
 	display: flex;
 	justify-content: flex-end;
 	margin-right: 10px;
+}
+
+.bDonate.bDonate{
+	margin-top: 20px;
+	position: absolute;
+	bottom: 60px;
+	background-color: #DDC33DFF;
+	border: none;
+	color: black;
 }
 
 .likes{

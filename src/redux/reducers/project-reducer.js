@@ -1,12 +1,13 @@
-import { usersAPI } from "../../api/api";
+import { projectsAPI } from "../../api/api";
 
-const ADD_PROJECT = 'profile/ADD_PROJECT';
-const SET_PROJECTS = 'profile/SET_PROJECTS';
-const CHANGE_LIKES_COUNT = 'profile/CHANGE_LIKES_COUNT';
+const ADD_PROJECT = 'project/ADD_PROJECT';
+const SET_PROJECTS = 'project/SET_PROJECTS';
+const CHANGE_LIKES_COUNT = 'project/CHANGE_LIKES_COUNT';
+const PROJECT_CLEAR = 'project/PROJECT_CLEAR'
 
 let initialState = {
 	projectsData: [ 	//здесь проинициализированы данные, чтобы видно было что-то без запуска сервера
-		{
+		/* {
 			id: 1000,
 			projectName: "Крутой проект",
 			projectDesc: "Описание крутого проекта, в который необходимо. Описание крутого проекта, в который необходимо. Описание крутого проекта, в который необходимо.",
@@ -25,32 +26,24 @@ let initialState = {
 			creatorName: "Иванов Бильбо Бегинс",
 			likesCount: 228,
 			likeFlag: true
-		}
+		} */
 	],
 }
 
-export const profileReducer = (state=initialState, action) => {
+export const projectReducer = (state=initialState, action) => {
 	switch (action.type) {
 		case ADD_PROJECT: {
 			let len = state.projectsData.length + 1;	
 			return {
 				...state,
-				projectsData: [...state.projectsData, {id: len, 
-					projectName: action.newProject.projectName,
-					creatorName: action.newProject.creatorName,
-					projectDesc: action.newProject.projectDesc,
-					requiredAmount: action.newProject.requiredAmount,
-					collectedAmount: action.newProject.collectedAmount,
-					likesCount: 0,
-					likeFlag: false
-				}],
+				projectsData: [...state.projectsData, {...action.newProject, id: len, likesCount: 0, likeFlag: false}],
 			};
 		}
 		case SET_PROJECTS: {	
 			console.log('asdasd');
 			return {
 				...state,
-				projectsData: [...state.projectsData,  ...action.projectsData],		//берем инициализационные данные и прибавляем к ним данные сервера
+				projectsData:/*  action.projectsData */ [...state.projectsData,  ...action.projectsData],		//берем инициализационные данные и прибавляем к ним данные сервера
 			};
 		}
 		case CHANGE_LIKES_COUNT: {
@@ -66,6 +59,12 @@ export const profileReducer = (state=initialState, action) => {
 				})
 			};	
 		}
+		case PROJECT_CLEAR: {
+			return {
+				...state, 
+				projectsData: []
+			};	
+		}
 
 		default:
 			return state;
@@ -76,13 +75,18 @@ export const profileReducer = (state=initialState, action) => {
 export const addProject = (newProject) => ({type: ADD_PROJECT, newProject})
 export const setProjects = (projectsData) => ({type: SET_PROJECTS, projectsData})
 export const changeLikesCount = (id) => ({type: CHANGE_LIKES_COUNT, id})
+export const projectClear = () => ({type: PROJECT_CLEAR})
 
 //thunk creators:
 export const addProjectTC = (newProject) => async (dispatch) => {
 	dispatch(addProject(newProject));
-	usersAPI.addProject(newProject);
+	projectsAPI.addProject(newProject);
 }
 export const getProjectsTC = () => async (dispatch) => {
-	const data = await usersAPI.getProjects();
+	const data = await projectsAPI.getProjects();
+	dispatch(setProjects(data))
+}
+export const getMyProjectsTC = (userId) => async (dispatch) => {
+	const data = await projectsAPI.getMyProjects(userId);
 	dispatch(setProjects(data))
 }
