@@ -23,12 +23,6 @@
       "password": "$2a$10$uMmrNBXvVrHhfzdfiVtbM.SNVNQTFzohFFIhHc4l8q6VGE3PlYMua",
       "name": "Букавин Максим Лалу",
       "id": 4
-    },
-    {
-      "email": "maksimbul2011100@gmail.com",
-      "password": "$2a$10$cmAhEGrOMZcsBUtpEy9LlOyi8bDqtcasX97FXPElQWGggkNHWxOQq",
-      "name": "ТЕСТ ТЕСТ ТЕСТ",
-      "id": 5
     }
   ],
   "projects": [
@@ -108,6 +102,18 @@
       "likeFlag": false,
       "userId": "4",
       "id": 7
+    },
+    {
+      "projectName": "tttt",
+      "projectDesc": "tttt",
+      "requiredAmount": 100011,
+      "creatorName": "Букавин Максим Лалу",
+      "collectedAmount": 0,
+      "categories": "Технологии",
+      "likesCount": 0,
+      "likeFlag": false,
+      "userId": "4",
+      "id": 8
     }
   ]
 }

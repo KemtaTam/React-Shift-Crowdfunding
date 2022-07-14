@@ -1,0 +1,22 @@
+.wrapper{
+	margin-top: 120px;
+}
+
+.title{
+	font-size: 32px;
+	font-weight: 400;
+	line-height: 39px;
+}
+.link_projects{
+	text-decoration: underline;
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 20px;
+}
+
+.projects{
+	display: flex;
+	justify-content: center;
+	margin-top: 20px;
+}
+

@@ -3,10 +3,6 @@ import axios from "axios";
 const instance = axios.create({
 	withCredentials: true,
 	baseURL: "http://localhost:3001/",
-	headers: {
-		'Content-Type': 'application/json',
-		'accept': "*/*"
-	}
 })
 
 // https://crowdfunding-platform-backend.herokuapp.com/
@@ -17,7 +13,6 @@ export const authAPI = {
 		return instance.post(`register`, user)
 			.then(response => {
 				return response.data
-				debugger
 			})
 	},
 	login(data){

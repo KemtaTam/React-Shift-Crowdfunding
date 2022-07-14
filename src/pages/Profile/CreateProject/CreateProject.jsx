@@ -4,8 +4,9 @@ import * as Yup from 'yup';
 import s from './CreateProject.module.css';
 import { Button } from 'antd';
 import { ToastContainer, toast } from 'react-toastify';
+import { memo } from 'react';
 
-const CreateProjectForm = (props) => {
+const CreateProjectForm = memo((props) => {
 	return (
 		<Formik
 			initialValues={{ projectName: '', projectDesc: '', 
@@ -68,12 +69,12 @@ const CreateProjectForm = (props) => {
 			)}
 		</Formik>
 	)
-}
-export const CreateProject = (props) => {
-	
+})
+
+export const CreateProject = memo((props) => {	
 	return ( 
 		<div>
 			<CreateProjectForm {...props}/>
 		</div>
 	 );
-}
+})

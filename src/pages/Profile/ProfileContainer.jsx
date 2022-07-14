@@ -2,17 +2,16 @@ import { connect } from "react-redux";
 import { Profile } from "./Profile";
 import {getAuthUserData, logout} from "../../redux/reducers/auth-reducer"
 import { addProject, addProjectTC, getProjectsTC, getMyProjectsTC, changeLikesCount, projectClear } from "../../redux/reducers/project-reducer"
-import React, { useEffect } from "react";
+import React, { memo, useEffect } from "react";
 import { compose } from "redux";
 import { Navigate } from "react-router-dom";
 
-const ProfileContainer = (props) => {
-	console.log(props.isAuth);
+const ProfileContainer = memo((props) => {
 	useEffect(() => {
 		props.getAuthUserData();
 		props.getMyProjectsTC(props.userId);
 		return () => {props.projectClear()}
-	}, [])
+	}, [props.userId])
 
 	return ( 
 		<span>
@@ -21,7 +20,7 @@ const ProfileContainer = (props) => {
 				<Navigate to={"/login"} />}
 		</span>
 	)
-}
+})
 
 let mapStateToProps = (state) => {
 	return {
@@ -34,6 +33,8 @@ let mapStateToProps = (state) => {
 
 export default compose(
 	 connect(mapStateToProps, {
-		getAuthUserData, addProject, addProjectTC, getProjectsTC, getMyProjectsTC, changeLikesCount, logout, projectClear
+		getAuthUserData, addProject, addProjectTC, 
+		getProjectsTC, getMyProjectsTC, changeLikesCount, 
+		logout, projectClear
 	}),
 )(ProfileContainer);

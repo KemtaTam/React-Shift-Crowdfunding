@@ -43,7 +43,7 @@ export const projectReducer = (state=initialState, action) => {
 			console.log('asdasd');
 			return {
 				...state,
-				projectsData:/*  action.projectsData */ [...state.projectsData,  ...action.projectsData],		//берем инициализационные данные и прибавляем к ним данные сервера
+				projectsData: action.projectsData /* [...state.projectsData,  ...action.projectsData] */,	
 			};
 		}
 		case CHANGE_LIKES_COUNT: {
@@ -59,7 +59,7 @@ export const projectReducer = (state=initialState, action) => {
 				})
 			};	
 		}
-		case PROJECT_CLEAR: {
+		case PROJECT_CLEAR: {	//чтобы при переходе от общих проектов к своим, общие не отображались
 			return {
 				...state, 
 				projectsData: []

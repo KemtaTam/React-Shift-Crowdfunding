@@ -14,9 +14,7 @@ const RegistrationContainer = (props) =>{
 
 let mapStateToProps = (state) => {
 	return {
-		/* isFetching: state.usersPage.isFetching,
 		isAuth: state.auth.isAuth,
-		captchaUrl: state.auth.captchaUrl */
 	}
 }
 

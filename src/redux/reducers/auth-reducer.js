@@ -30,7 +30,7 @@ export const setAuthUserData = (userId, email, name, isAuth) => ({
 })
 //thunk creators
 export const getAuthUserData = () => async (dispatch) => {	
-	let id = localStorage.getItem("id");				// здесь должно быть обращение к серверу	
+	let id = localStorage.getItem("id");					
 	let name = localStorage.getItem("name");
 	let email = localStorage.getItem("email");
 	id && name && email && dispatch(setAuthUserData(id, email, name, true));	

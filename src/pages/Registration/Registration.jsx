@@ -2,15 +2,16 @@ import { Formik} from 'formik';
 import { Input, Form, FormItem, Checkbox } from 'formik-antd'
 import * as Yup from 'yup';
 import s from '../Login/Login.module.css';
-import { NavLink, useNavigate } from 'react-router-dom';
+import { Navigate, NavLink, useNavigate } from 'react-router-dom';
 import { Button } from 'antd';
+import { memo } from 'react';
 
 /* matches(/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{2,})/,
 "Должен содержать от 5 до 255 символов, одну большую букву, одну маленькую, одну цифру и один специальный символ"
 ) */
 
-const RegistrationForm = (props) => {
-	const activeLink = ({isActive}) => isActive ? s.form_navigate_el_active : s.form_navigate_el; 	//для подсветки активной кнопки
+const RegistrationForm = memo((props) => {
+	const activeLink = ({isActive}) => isActive ? s.form_navigate_el_active : s.form_navigate_el; 	//для подсветки активной ссылки
 	const navigate = useNavigate();
 
 	return (
@@ -80,13 +81,13 @@ const RegistrationForm = (props) => {
 			)}
 		</Formik>
   );
-}
+})
 
-export const Registration = (props) => {
-
-	return ( 
+export const Registration = memo((props) => {
+	return props.isAuth ? 
+		<Navigate to={"/profile"}/> : (  
 		<div>
 			<RegistrationForm {...props}/>
 		</div>
-	 );
-}
+	);
+})

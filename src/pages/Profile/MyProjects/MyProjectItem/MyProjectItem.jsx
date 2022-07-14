@@ -3,10 +3,12 @@ import likeOn from '../../../../Assets/images/likeOn.svg'
 import likeOff from '../../../../Assets/images/likeOff.svg'
 import { Button } from 'antd';
 import { NavLink } from 'react-router-dom';
+import { memo } from 'react';
 
-export const MyProjectItem = (props) => {
+export const MyProjectItem = memo((props) => {
 	//расчеты длины заполненности линии
 	let percentCollected = props.collectedAmount / props.requiredAmount * 100;
+	percentCollected = percentCollected.toFixed(2);
 	if(percentCollected > 100) percentCollected = 100; 
 	const collectedLineWidth = 100 - (100 - percentCollected);
 
@@ -31,7 +33,7 @@ export const MyProjectItem = (props) => {
 				<div className={s.lineEmpty}>
 					<div className={s.lineFilled} style={{width: collectedLineWidth + '%'}}></div>
 				</div>
-				<div className={s.summ}>{props.collectedAmount + '/' + props.requiredAmount + '₽'}</div>
+				<div className={s.summ}>{props.collectedAmount + '/' + props.requiredAmount + '₽' + ' ' + '('+percentCollected+'%'+')'}</div>
 			</div>
 			<NavLink to={`/projects/${props.id}`}><Button className={s.bDonate} type='primary'>Поддержать</Button></NavLink>
 			<div className={s.likes}>
@@ -40,4 +42,4 @@ export const MyProjectItem = (props) => {
 			</div>
 		</div>
 	)
-}
+})

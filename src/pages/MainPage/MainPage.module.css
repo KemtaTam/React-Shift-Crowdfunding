@@ -1,65 +1,8 @@
-
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
-
-.statisticBlock {
-    width: 100%;
-	height: 600px;
-	background-color: #2E8FAE;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	background-image: url('../../Assets/images/bg-woman2.png');
-	background-repeat: no-repeat;
-	background-position: center right;
-	background-size: 1000px;
-}
-
-.formWrapper{
-	border-radius: 23px;
-	width: min-content;
-	padding-top: 15px;
-	padding-left: 30px;
-	padding-right: 30px;
-	width: 442px;
-    min-height: 484px;
-    height: max-content;
-	margin-right: auto;
-	margin-left: auto;
-	margin-top: 70px;
-	border: 1px solid black;
-}
-
-.wrapperButSub {
-	display: flex;
-	justify-content: center;
-}
-
-.bSub.bSub{
-	font-size: 20px;
-	width: 274px; 
-	height: 75px; 
-	background-color: #D0AF3A;
-	border: none;
-	
-	border-radius: 138px;
-
-	position: absolute;
-	width: 274px;
-	height: 75px;
-	left: 150px;
-	top: 427px;
-}
-
-.titleCrowd {
-	position: absolute;
-	width: 930px;
-	height: 67px;
-	left: 150px;
-	top: 257px;
-	color: black;
-	font-family: 'Montserrat';
-	font-weight: 700;
-	font-size: 55px;
-	line-height: 67px;
+.container{
+	max-width: 1600px;
+	height: 100%;
+	margin: 0 auto;
+	padding: 0 10px;
+	position: relative;
 }
 

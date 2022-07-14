@@ -2,10 +2,11 @@ import { Formik } from 'formik';
 import { Input, Form, FormItem } from 'formik-antd'
 import * as Yup from 'yup';
 import s from './Login.module.css';
-import { NavLink, useNavigate } from 'react-router-dom';
+import { Navigate, NavLink, useNavigate } from 'react-router-dom';
 import { Button } from 'antd';
+import { memo } from 'react';
 
-const LoginForm = (props) => {
+const LoginForm = memo((props) => {
 	const activeLink = ({isActive}) => isActive ? s.form_navigate_el_active : s.form_navigate_el;		//для подсветки активной ссылки
 	const navigate = useNavigate();
 
@@ -45,16 +46,14 @@ const LoginForm = (props) => {
 			)}
 		</Formik>
   );
-}
+})
 
-export const Login = (props) => {
-	/* if(props.isAuth){
-		return <Navigate to={"/profile"}/>
-	} */
+export const Login = memo((props) => {
 
-	return ( 
+	return props.isAuth ? 
+		<Navigate to={"/profile"}/> : ( 
 		<div>
 			<LoginForm {...props}/>
 		</div>
 	 );
-}
+})

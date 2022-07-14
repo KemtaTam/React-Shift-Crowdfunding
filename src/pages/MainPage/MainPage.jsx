@@ -1,29 +1,17 @@
-import s from './MainPage.module.css'
-import { Button } from 'antd';
-
-
+import { SomeProjects } from './SomeProjects/SomeProjects';
+import { Statistic } from './Statistic/Statistic';
 
 export const MainPage = (props) => {
+	debugger
 	return (
-		<><div></div><Statistic /></>
-	)
-}
-
- const Statistic = () => {
-	return (
-		
-		<div className = {s.statisticBlock}> 
-
-			
-		
-		<div className = {s.wrapperButSub}>
-			<Button type="default" htmlType="submit" className={s.bSub}>Создать проект</Button>
-						</div>
-
-						<div className = {s.titleCrowd}>Краудфандинговая платформа</div>
+		<div >
+			<Statistic />
+			<SomeProjects {...props}/>
 		</div>
-		
 	)
 }
+
+
+
 
 

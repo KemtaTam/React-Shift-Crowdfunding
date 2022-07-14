@@ -3,8 +3,9 @@ import { MyProjects } from './MyProjects/MyProjects';
 import defaultAva from '../../Assets/images/defaultAva.svg'
 import { CreateProject } from './CreateProject/CreateProject';
 import { NavLink } from 'react-router-dom';
+import { memo } from 'react';
 
-export const Profile = (props) => {
+export const Profile = memo((props) => {
 
 	return (
 		<section className={s.content}>
@@ -25,4 +26,4 @@ export const Profile = (props) => {
 			</div>
 		</section>
 	)
-}
+})
