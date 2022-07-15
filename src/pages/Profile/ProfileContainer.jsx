@@ -4,7 +4,7 @@ import {getAuthUserData, logout} from "../../redux/reducers/auth-reducer"
 import { addProject, addProjectTC, getProjectsTC, getMyProjectsTC, changeLikesCount, projectClear } from "../../redux/reducers/project-reducer"
 import React, { memo, useEffect } from "react";
 import { compose } from "redux";
-import { Navigate } from "react-router-dom";
+import { withAuthRedirect } from "../../hoc/withAuthRedirect";
 
 const ProfileContainer = memo((props) => {
 	useEffect(() => {
@@ -15,9 +15,7 @@ const ProfileContainer = memo((props) => {
 
 	return ( 
 		<span>
-			{props.isAuth ? 
-				<Profile {...props}/> :
-				<Navigate to={"/login"} />}
+			<Profile {...props}/> 
 		</span>
 	)
 })
@@ -37,4 +35,5 @@ export default compose(
 		getProjectsTC, getMyProjectsTC, changeLikesCount, 
 		logout, projectClear
 	}),
+	/* withAuthRedirect */
 )(ProfileContainer);

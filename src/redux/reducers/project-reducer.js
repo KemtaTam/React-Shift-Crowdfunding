@@ -90,3 +90,7 @@ export const getMyProjectsTC = (userId) => async (dispatch) => {
 	const data = await projectsAPI.getMyProjects(userId);
 	dispatch(setProjects(data))
 }
+export const getSomeProjectTC = (id) => async (dispatch) => {
+	const data = await projectsAPI.getSomeProject(id);
+	dispatch(setProjects(data))
+}

@@ -19,5 +19,5 @@ let mapStateToProps = (state) => {
 }
 
 export default compose(
-	connect(mapStateToProps, {login}))
-(LoginContainer);
+	connect(mapStateToProps, {login}),
+)(LoginContainer);

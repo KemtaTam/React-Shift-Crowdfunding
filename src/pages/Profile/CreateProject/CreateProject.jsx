@@ -15,6 +15,11 @@ const CreateProjectForm = memo((props) => {
 				likesCount: 0, likeFlag: false,
 				userId: props.userId
 			}}
+			/* initialValues={{ name: '', description: '', 
+				start_date: "2022-07-14T15:04:36.448Z", end_date: "2022-08-14T15:04:36.448Z", 
+				required_amount: 0,
+				collected_amount: 0, categories: '',
+			}} */
 			validationSchema={Yup.object({
 				projectName: Yup.string().required('Обязательно'),
 				categories: Yup.string().required('Обязательно'),

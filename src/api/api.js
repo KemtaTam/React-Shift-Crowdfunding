@@ -3,6 +3,9 @@ import axios from "axios";
 const instance = axios.create({
 	withCredentials: true,
 	baseURL: "http://localhost:3001/",
+	headers: {
+		"Authorization": "Bearer=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhYUBtYWlsLnJ1IiwiYXV0aG9yaXRpZXMiOltdLCJpYXQiOjE2NTc4MDg2OTcsImV4cCI6MTY1ODM2MTYwMH0.Ml8XY2Uk0inRC3q32ICVNcgu51KEivaU00oA_68O0Js"
+	}
 })
 
 // https://crowdfunding-platform-backend.herokuapp.com/
@@ -17,17 +20,15 @@ export const authAPI = {
 	},
 	login(data){
 		return instance.post(`login`, data)
-				.then(response => response.data)
-	},
-	/* logout(){
-		return instance.delete(`auth/login`)
-				.then(response => response.data)
-	} */
+				/* .then(response => response.data) */
+				.then(response => response)
+	}
 }
 
 export const projectsAPI = {
 	addProject(project) {
-		return instance.post(`projects`, project)
+		debugger
+		return instance.post(`projects`, project)	//******************************** */
 			.then(response => response.data)
 	},
 	getProjects() {
@@ -36,6 +37,10 @@ export const projectsAPI = {
 	},
 	getMyProjects(userId) {
 		return instance.get(`projects?userId=${userId}`)
+			.then(response => response.data)
+	},
+	getSomeProject(id) {
+		return instance.get(`projects?id=${id}`)
 			.then(response => response.data)
 	}
 }

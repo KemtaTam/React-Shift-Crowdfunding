@@ -1,0 +1,70 @@
+.projectEl{
+	width: 350px;
+	height: 350px;
+	background-color: rgba(46, 143, 174, 0.15);
+	border-radius: 23px;
+	margin-right: 20px;
+	margin-bottom: 20px;
+	padding: 10px;
+	position: relative;
+}
+.projectEl_title{
+	font-size: 20px;
+	font-weight: 500;
+	display: flex;
+	justify-content: center;
+	padding-top: 10px;
+}
+.creatorName{
+	display: flex;
+	justify-content: center;
+	font-weight: 500;
+}
+.projectEl_desk{
+	color: #636363;
+	margin-top: 10px;
+	font-size: 16px;
+}
+
+.summ_wrapper{
+	margin-top: 20px;
+}
+.lineEmpty{
+	width: 100%;
+	height: 10px;
+	background-color: white;
+	border-radius: 8px;
+}
+.lineFilled{
+	height: 10px;
+	background-color: #DDC33D;
+	border-radius: 8px;
+}
+.summ{
+	display: flex;
+	justify-content: flex-end;
+	margin-right: 10px;
+}
+
+.bDonate.bDonate{
+	margin-top: 20px;
+	position: absolute;
+	bottom: 60px;
+	background-color: #DDC33DFF;
+	border: none;
+	color: black;
+}
+
+.likes{
+	display: flex;
+	position: absolute;
+	bottom: 5px;
+}
+.likes img{
+	width: 40px;
+	cursor: pointer;
+	margin-right: 5px;
+}
+.likes span{
+	font-size: 20px;
+}

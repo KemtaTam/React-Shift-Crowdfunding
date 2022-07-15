@@ -11,8 +11,9 @@ import {store} from "./redux/redux-store";
 import {initializeApp} from './redux/reducers/app-reducer'
 import { useEffect } from "react";
 import Preloader from "./components/common/Preloader/Preloader";
+
 import ProjectsContainer from "./pages/Projects/ProjectsContainer";
-import { Project } from "./pages/Projects/Project";
+import ProjectContainer from "./pages/Projects/Project/ProjectContainer";
 
 function App(props) {
 	useEffect(() => {
@@ -27,7 +28,7 @@ function App(props) {
 				<Route path="/login" element={<LoginContainer />} />
 				<Route path="/register" element={<RegistrationContainer />} />
 				<Route path="/profile" element={<ProfileContainer />} />
-				<Route path="/projects/:id" element={<Project />} />
+				<Route path="/projects/:id" element={<ProjectContainer />} />
 				<Route path="/projects" element={<ProjectsContainer />} />
 				<Route path="*" element={ <NotFound404 />} />
 			</Routes>
