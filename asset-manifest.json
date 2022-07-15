@@ -1,19 +1,20 @@
 {
   "files": {
-    "main.css": "/React-Shift-Crowdfunding/static/css/main.164cf9c9.css",
-    "main.js": "/React-Shift-Crowdfunding/static/js/main.9ac61062.js",
-    "static/media/NotFound404.jpg": "/React-Shift-Crowdfunding/static/media/NotFound404.05acb6dd84bdf40cbf83.jpg",
-    "static/media/bg-woman2.png": "/React-Shift-Crowdfunding/static/media/bg-woman2.1583f8cf937c1ec52e86.png",
-    "static/media/defaultAva.svg": "/React-Shift-Crowdfunding/static/media/defaultAva.210bbaaafe29c4793d12403d76131d6b.svg",
-    "static/media/profile.svg": "/React-Shift-Crowdfunding/static/media/profile.d41ae41f0069bb962a84ee728500582e.svg",
-    "static/media/likeOff.svg": "/React-Shift-Crowdfunding/static/media/likeOff.1038d655608cc53523f04b7577f481a6.svg",
-    "index.html": "/React-Shift-Crowdfunding/index.html",
-    "static/media/likeOn.svg": "/React-Shift-Crowdfunding/static/media/likeOn.d1126d78615b3f7421d981059a09ca7e.svg",
-    "main.164cf9c9.css.map": "/React-Shift-Crowdfunding/static/css/main.164cf9c9.css.map",
-    "main.9ac61062.js.map": "/React-Shift-Crowdfunding/static/js/main.9ac61062.js.map"
+    "main.css": "./static/css/main.2d33cfa1.css",
+    "main.js": "./static/js/main.0734a2d5.js",
+    "static/media/NotFound404.jpg": "./static/media/NotFound404.05acb6dd84bdf40cbf83.jpg",
+    "static/media/loader.gif": "./static/media/loader.a91360f3b55d215bfcb5.gif",
+    "static/media/bg-woman.png": "./static/media/bg-woman.1e8560d0978b78e8d3cc.png",
+    "static/media/defaultAva.svg": "./static/media/defaultAva.210bbaaafe29c4793d12403d76131d6b.svg",
+    "static/media/profile.svg": "./static/media/profile.d41ae41f0069bb962a84ee728500582e.svg",
+    "static/media/likeOff.svg": "./static/media/likeOff.1038d655608cc53523f04b7577f481a6.svg",
+    "static/media/likeOn.svg": "./static/media/likeOn.d1126d78615b3f7421d981059a09ca7e.svg",
+    "index.html": "./index.html",
+    "main.2d33cfa1.css.map": "./static/css/main.2d33cfa1.css.map",
+    "main.0734a2d5.js.map": "./static/js/main.0734a2d5.js.map"
   },
   "entrypoints": [
-    "static/css/main.164cf9c9.css",
-    "static/js/main.9ac61062.js"
+    "static/css/main.2d33cfa1.css",
+    "static/js/main.0734a2d5.js"
   ]
 }
