@@ -19,6 +19,7 @@ const LoginForm = memo((props) => {
 			  })}
 			onSubmit={(values, { setSubmitting, setStatus }) => {
 				console.log(JSON.stringify(values, null, 2));
+				debugger
 				props.login(values)
 				setSubmitting(false);
 				values.password = '';

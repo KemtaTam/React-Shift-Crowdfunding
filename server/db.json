@@ -23,6 +23,12 @@
       "password": "$2a$10$uMmrNBXvVrHhfzdfiVtbM.SNVNQTFzohFFIhHc4l8q6VGE3PlYMua",
       "name": "Букавин Максим Лалу",
       "id": 4
+    },
+    {
+      "email": "dima@mail.ru",
+      "password": "$2a$10$hFmifMjpASQA/cM4b166He4cx/d0X9z0SQH0uLir0XgI3ORTjrt3.",
+      "name": "Бабин Дмитрий Евгеньевич",
+      "id": 5
     }
   ],
   "projects": [
@@ -30,7 +36,7 @@
       "projectName": "Крутой проект",
       "projectDesc": "asdasdads",
       "requiredAmount": 20000,
-      "collectedAmount": 0,
+      "collectedAmount": 10000,
       "creatorName": "Иванов Бильбо Бегинс",
       "likesCount": 0,
       "likeFlag": false,
@@ -114,6 +120,42 @@
       "likeFlag": false,
       "userId": "4",
       "id": 8
+    },
+    {
+      "projectName": "qwerty",
+      "projectDesc": "qwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwer",
+      "requiredAmount": 100000,
+      "creatorName": "Бабин Дмитрий Евгеньевич",
+      "collectedAmount": 0,
+      "categories": "Строительство",
+      "likesCount": 0,
+      "likeFlag": false,
+      "userId": "5",
+      "id": 9
+    },
+    {
+      "projectName": "qwewqe",
+      "projectDesc": "wqe",
+      "requiredAmount": 1000,
+      "creatorName": "Бабин Дмитрий Евгеньевич",
+      "collectedAmount": 0,
+      "categories": "Спорт",
+      "likesCount": 0,
+      "likeFlag": false,
+      "userId": "5",
+      "id": 10
+    },
+    {
+      "projectName": "qwe",
+      "projectDesc": "qwe",
+      "requiredAmount": 1000,
+      "creatorName": "Фархад Игнат Бульхат",
+      "collectedAmount": 0,
+      "categories": "Спорт",
+      "likesCount": 0,
+      "likeFlag": false,
+      "userId": "3",
+      "id": 11
     }
   ]
 }

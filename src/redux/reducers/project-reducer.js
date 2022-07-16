@@ -4,6 +4,7 @@ const ADD_PROJECT = 'project/ADD_PROJECT';
 const SET_PROJECTS = 'project/SET_PROJECTS';
 const CHANGE_LIKES_COUNT = 'project/CHANGE_LIKES_COUNT';
 const PROJECT_CLEAR = 'project/PROJECT_CLEAR'
+const SWITCH_IS_FETCHING = 'users/SWITCH_IS_FETCHING';
 
 let initialState = {
 	projectsData: [ 	//здесь проинициализированы данные, чтобы видно было что-то без запуска сервера
@@ -28,6 +29,7 @@ let initialState = {
 			likeFlag: true
 		} */
 	],
+	isFetching: false,
 }
 
 export const projectReducer = (state=initialState, action) => {
@@ -40,7 +42,7 @@ export const projectReducer = (state=initialState, action) => {
 			};
 		}
 		case SET_PROJECTS: {	
-			console.log('asdasd');
+			debugger
 			return {
 				...state,
 				projectsData: action.projectsData /* [...state.projectsData,  ...action.projectsData] */,	
@@ -65,6 +67,9 @@ export const projectReducer = (state=initialState, action) => {
 				projectsData: []
 			};	
 		}
+		case SWITCH_IS_FETCHING: {
+			return {...state, isFetching: action.isFetching}
+		}
 
 		default:
 			return state;
@@ -76,21 +81,32 @@ export const addProject = (newProject) => ({type: ADD_PROJECT, newProject})
 export const setProjects = (projectsData) => ({type: SET_PROJECTS, projectsData})
 export const changeLikesCount = (id) => ({type: CHANGE_LIKES_COUNT, id})
 export const projectClear = () => ({type: PROJECT_CLEAR})
+export const setFetching = (isFetching) => ({type: SWITCH_IS_FETCHING, isFetching})
 
 //thunk creators:
 export const addProjectTC = (newProject) => async (dispatch) => {
+	dispatch(setFetching(true));
 	dispatch(addProject(newProject));
 	projectsAPI.addProject(newProject);
+	dispatch(setFetching(false));
 }
 export const getProjectsTC = () => async (dispatch) => {
+	dispatch(setFetching(true));
 	const data = await projectsAPI.getProjects();
 	dispatch(setProjects(data))
+	dispatch(setFetching(false));
 }
 export const getMyProjectsTC = (userId) => async (dispatch) => {
+	dispatch(setFetching(true));
 	const data = await projectsAPI.getMyProjects(userId);
+	debugger
 	dispatch(setProjects(data))
+/* 	dispatch(setProjects(data.items)) */		/* ////////////////////////////////////////////////////// */
+	dispatch(setFetching(false));
 }
 export const getSomeProjectTC = (id) => async (dispatch) => {
+	dispatch(setFetching(true));
 	const data = await projectsAPI.getSomeProject(id);
 	dispatch(setProjects(data))
+	dispatch(setFetching(false));
 }

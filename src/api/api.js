@@ -20,14 +20,13 @@ export const authAPI = {
 	},
 	login(data){
 		return instance.post(`login`, data)
-				/* .then(response => response.data) */
-				.then(response => response)
+				.then(response => response.data)	/* ************************************ */
+				/* .then(response => response) */
 	}
 }
 
 export const projectsAPI = {
 	addProject(project) {
-		debugger
 		return instance.post(`projects`, project)	//******************************** */
 			.then(response => response.data)
 	},
@@ -39,8 +38,28 @@ export const projectsAPI = {
 		return instance.get(`projects?userId=${userId}`)
 			.then(response => response.data)
 	},
+	/* getMyProjects(userId) {
+		return instance.get(`users/${userId}/projects`)
+			.then(response => response.data)
+	}, */
 	getSomeProject(id) {
 		return instance.get(`projects?id=${id}`)
 			.then(response => response.data)
 	}
+}
+
+export const profileAPI = {
+	getUserProfile(userId) {
+		return instance.get(`users/${userId}`)
+				.then(response => response.data);
+	},
+	/* getUserProfile() {
+		return instance.get(`users/profile`)
+				.then(response => response.data);
+	}, */
+	updateProfile(profileData) {
+		debugger
+		return instance.put(`users`, profileData)	
+			.then(response => response.data)
+	},
 }

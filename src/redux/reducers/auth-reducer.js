@@ -1,4 +1,4 @@
-import { authAPI } from "../../api/api";
+import { authAPI, profileAPI } from "../../api/api";
 
 const SET_USER_DATA = 'auth/SET_USER_DATA';
 
@@ -30,10 +30,15 @@ export const setAuthUserData = (userId, email, name, isAuth) => ({
 })
 //thunk creators
 export const getAuthUserData = () => async (dispatch) => {	
+	/* let data = await profileAPI.getUserProfile();
+	let id = data.id;					
+	let name = data.name; 
+	let email = data.email; */
 	let id = localStorage.getItem("id");					
 	let name = localStorage.getItem("name");
 	let email = localStorage.getItem("email");
-	id && name && email && dispatch(setAuthUserData(id, email, name, true));	
+	debugger
+	id && name && email && dispatch(setAuthUserData(id, email, name, true));
 }
 export const register = (user) => async (dispatch) => {
 	let data = await authAPI.register(user);
@@ -45,6 +50,7 @@ export const register = (user) => async (dispatch) => {
 }
 export const login = (user) => async (dispatch) => {
 	const data = await authAPI.login(user);
+	debugger
 	let {id, email, name} = data.user;
 	localStorage.setItem("name", name);
 	localStorage.setItem("id", id);

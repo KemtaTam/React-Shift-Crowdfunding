@@ -4,7 +4,6 @@ import main from '../MainPage.module.css'
 import s from './SomeProjects.module.css'
 
 export const SomeProjects = (props) => {
-	debugger
 	return (
 		<div className={main.container}>
 			<div className={s.wrapper}>
