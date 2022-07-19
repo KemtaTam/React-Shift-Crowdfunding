@@ -122,8 +122,8 @@
       "id": 8
     },
     {
-      "projectName": "qwerty",
-      "projectDesc": "qwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwer",
+      "projectName": "Проект",
+      "projectDesc": "qwerqwerqwerqwerqwerqwerqwerqwerqwerrqwerqwerqwerqwerrqwerqwerqwerqwerrqwerqwerqwerqwerrqwerqwerqwerqwerqwerrqwerqwerqwerqwerrqwerqwerqwerqwerrqwerqwerqwerqwerrqwerqwerqwerqwerrqwerqwerqwerqwerrqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwer",
       "requiredAmount": 100000,
       "creatorName": "Бабин Дмитрий Евгеньевич",
       "collectedAmount": 0,
@@ -156,6 +156,19 @@
       "likeFlag": false,
       "userId": "3",
       "id": 11
+    },
+    {
+      "name": "Новый проект",
+      "description": "Описание нового проекта",
+      "required_amount": 5000,
+      "creatorName": "Бабин Дмитрий Евгеньевич",
+      "collected_amount": 0,
+      "categories": "Строительство",
+      "likesCount": 0,
+      "likeFlag": false,
+      "userId": "5",
+      "requiredAmount": 0,
+      "id": 12
     }
   ]
 }

@@ -14,11 +14,10 @@ export const MyProjectItem = memo((props) => {
 	const collectedLineWidth = 100 - (100 - percentCollected);
 
 	//чтобы в карточке отображать только часть описания
-	let description = "";
-	if (props.projectDesc) {
-		let description = props.projectDesc;
-		if (description.length > 70) {
-			description = description.slice(0, 70) + "...";
+	let description = props.projectDesc;
+	if (description) {
+		if (description.length > 100) {
+			description = description.slice(0, 100) + "...";
 		}
 	}
 
@@ -32,7 +31,6 @@ export const MyProjectItem = memo((props) => {
 			<div className={s.creatorName}>{props.creatorName}</div>
 			<div className={s.projectEl_desk}>
 				{description}
-				{/* Отображать точки в конце описания или нет */}
 			</div>
 			<div className={s.summ_wrapper}>
 				<div className={s.lineEmpty}>
